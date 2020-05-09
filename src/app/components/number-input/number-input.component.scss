@@ -1,0 +1,10 @@
+@import 'variables';
+
+.grid {
+  display: flex;
+ flex: 2 1  0
+}
+
+input[type=number]:invalid {
+  background-color: #FFCCCC;
+}

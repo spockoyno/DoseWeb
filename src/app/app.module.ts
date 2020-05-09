@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {PreclinicalModule} from './components/preclinical/preclinical.module';
+import {PreclinicalModule} from './pages/preclinical/preclinical.module';
+import {StoreModule} from './store/store.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {PreclinicalModule} from './components/preclinical/preclinical.module';
   ],
   imports: [
     BrowserModule,
-    PreclinicalModule
+    PreclinicalModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
