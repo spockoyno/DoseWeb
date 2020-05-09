@@ -1,4 +1,12 @@
 
+.main{
+  display: flex;
+flex-direction: column;
+  justify-content: stretch;
+  flex-grow: 1;
+  align-self: stretch;
+}
+
 .header {
   display: flex;
   /*padding-top: 0.42rem;*/
@@ -16,6 +24,23 @@
 .words{
   font-weight: bold;
   color:#232b2b;
-  margin-left: 2rem;
+  font-size: xx-large;
+  margin-left: 3rem;
 
 }
+
+
+
+/*.bottom {*/
+/*  display: flex;*/
+/*  background-color: #1abc9c;*/
+
+
+/*  height: 2.5rem;*/
+/*margin-left: -0.5rem;*/
+/*margin-right: -0.5rem;*/
+/*margin-top: auto;*/
+/*!*align-self: flex-end;*!*/
+
+
+/*}*/
