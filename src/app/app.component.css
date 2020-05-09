@@ -1,0 +1,21 @@
+
+.header {
+  display: flex;
+  /*padding-top: 0.42rem;*/
+  /*padding-bottom: 0.45rem;*/
+  background-color: #1abc9c;
+  align-items:center;
+  align-self: stretch;
+  height: 6rem;
+  margin: -0.5rem;
+
+
+
+}
+
+.words{
+  font-weight: bold;
+  color:#232b2b;
+  margin-left: 2rem;
+
+}
