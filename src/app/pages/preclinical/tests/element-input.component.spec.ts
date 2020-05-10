@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {PreclinicalComponent} from '../preclinical.component';
+import {ElementInputComponent} from '../element-input/element-input.component';
 
-describe('PreclinicalComponent', () => {
-  let component: PreclinicalComponent;
-  let fixture: ComponentFixture<PreclinicalComponent>;
+describe('ElementInputComponent', () => {
+  let component: ElementInputComponent;
+  let fixture: ComponentFixture<ElementInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PreclinicalComponent ]
+      declarations: [ ElementInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PreclinicalComponent);
+    fixture = TestBed.createComponent(ElementInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

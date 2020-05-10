@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgxsModule } from '@ngxs/store';
-import { NgxsSelectSnapshotModule } from '@ngxs-labs/select-snapshot';
-import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {NgxsModule} from '@ngxs/store';
+import {NgxsSelectSnapshotModule} from '@ngxs-labs/select-snapshot';
+import {NgxsDispatchPluginModule} from '@ngxs-labs/dispatch-decorator';
 import {AppState} from './app.state';
-
 
 
 @NgModule({
@@ -13,7 +12,7 @@ import {AppState} from './app.state';
   imports: [
     CommonModule,
     NgxsModule.forRoot([AppState],
-      {selectorOptions:{
+      {selectorOptions: {
         suppressErrors: false,
         injectContainerState: false
       }}

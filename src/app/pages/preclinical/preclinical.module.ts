@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PreclinicalComponent } from './preclinical.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PreclinicalComponent} from './preclinical.component';
 import {UserInputService} from './services/user-input.service';
-import { ParameterInputComponent } from './parameter-input/parameter-input.component';
-
+import {ParameterInputComponent} from './parameter-input/parameter-input.component';
+import {UiImportsModule} from '../../ui-imports.module';
+import {ComponentsModule} from '../../components/components.module';
+import {ElementInputComponent} from './element-input/element-input.component';
 
 
 @NgModule({
-  declarations: [PreclinicalComponent, ParameterInputComponent],
+  declarations: [PreclinicalComponent, ParameterInputComponent, ElementInputComponent],
    providers: [UserInputService],
   exports: [
     PreclinicalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UiImportsModule,
+    ComponentsModule
   ]
 })
 export class PreclinicalModule { }

@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {PreclinicalComponent} from '../preclinical.component';
+import {SliderInputComponent} from './slider-input.component';
 
-describe('PreclinicalComponent', () => {
-  let component: PreclinicalComponent;
-  let fixture: ComponentFixture<PreclinicalComponent>;
+describe('SliderInputComponent', () => {
+  let component: SliderInputComponent;
+  let fixture: ComponentFixture<SliderInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PreclinicalComponent ]
+      declarations: [ SliderInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PreclinicalComponent);
+    fixture = TestBed.createComponent(SliderInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

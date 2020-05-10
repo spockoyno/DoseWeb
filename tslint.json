@@ -25,7 +25,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "fx",
       "kebab-case"
     ],
     "eofline": true,
@@ -80,11 +80,7 @@
       true,
       "single"
     ],
-    "semicolon": {
-      "options": [
-        "always"
-      ]
-    },
+    "semicolon": false,
     "space-before-function-paren": {
       "options": {
         "anonymous": "never",

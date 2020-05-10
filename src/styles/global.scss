@@ -1,0 +1,153 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{box-sizing: border-box;}
+*,::before,::after{
+  box-sizing: inherit;
+}
+html,
+body,
+p,
+figure {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+@font-face {
+  font-family: icomoon;
+  src: url(/assets/icomoon.eot?qhlw25);
+  src: url(/assets/icomoon.eot?qhlw25#iefix) format('embedded-opentype'),
+    url(/assets/icomoon.ttf?qhlw25) format('truetype'),
+    url(/assets/icomoon.woff?qhlw25) format('woff'),
+    url(/assets/icomoon.svg?qhlw25#icomoon) format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import url('//hello.myfonts.net/count/315a85');
+@font-face {
+  font-family: Sailec-Medium;
+  src: url(/assets/315A85_0_0.eot);
+  src: url(/assets/315A85_0_0.eot?#iefix) format('embedded-opentype'),
+    url(/assets/315A85_0_0.woff2) format('woff2'),
+    url(/assets/315A85_0_0.woff) format('woff'),
+    url(/assets/315A85_0_0.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Sailec-Thin;
+  src: url(/assets/315A85_1_0.eot);
+  src: url(/assets/315A85_1_0.eot?#iefix) format('embedded-opentype'),
+    url(/assets/315A85_1_0.woff2) format('woff2'),
+    url(/assets/315A85_1_0.woff) format('woff'),
+    url(/assets/315A85_1_0.ttf) format('truetype');
+}
+
+@import 'material';
+@import 'nouislider';
+//@import 'variables';
+
+//@import '~material-design-icons/iconfont/material-icons.css';
+
+.hspace{
+  width:10px;
+  height:auto;
+  display:inline-block;
+}
+
+.hspace__big{
+  width:25px;
+  height:auto;
+  display:inline-block;
+}
+
+
+.hspace__huge{
+  width:50px;
+  height:auto;
+  display:inline-block;
+}
+
+.hspace__100{
+  width:100px;
+  height:auto;
+  display:inline-block;
+}
+
+
+.vspace__tiny{
+  width:auto;
+  height:2px;
+  display:inline-block;
+}
+
+.vspace__small{
+  width:auto;
+  height:5px;
+  display:inline-block;
+}
+
+.vspace{
+  width:auto;
+  height:10px;
+  display:inline-block;
+}
+
+
+.vspace__big{
+  width:auto;
+  height:25px;
+  display:inline-block;
+}
+.vspace__50{
+  width:auto;
+  height:50px;
+  display:inline-block;
+}
+.vspace__rem__5{
+  width:auto;
+  height:5rem;
+  display:inline-block;
+}
+
+.hr__line{
+  border: 5px solid #aaaaaa;
+  border-radius: 5px;
+
+}
+
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.grid{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.mat-usual-red {
+  background-color: gainsboro;
+  color: darkred;
+}
+
+.mat-nice-warn {
+  background-color: gainsboro;
+  color: red;
+}
+
+.mat-usual-black {
+  background-color: gainsboro;
+  color: black;
+}
+
+.mat-usual-green {
+  background-color: gainsboro;
+  color:darkgreen;
+}
+.mat-orange{
+  background-color: #d95319;
+  color:  #d95319
+}

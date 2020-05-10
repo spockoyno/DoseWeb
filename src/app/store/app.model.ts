@@ -1,14 +1,13 @@
-import {TwoLogTheta, TwoLogThetaDomain} from '../models/two-logs.model';
+import {TwoLogsModel} from '../models/theta.model';
 
 
 export interface PreclinicalModel  {
-  thetaTwoLogsInput: TwoLogTheta
-  domainThetaTwoLogs: TwoLogThetaDomain
+  thetaTwoLogsInput: TwoLogsModel;
 
 
 }
 
 export interface AppModel  {
 
-  preclinical: PreclinicalModel
+  preclinical: PreclinicalModel;
 }

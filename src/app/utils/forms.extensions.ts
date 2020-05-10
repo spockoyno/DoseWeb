@@ -1,7 +1,7 @@
-import { AbstractControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { observableCombineLatest } from './ui.utils';
-import { filter, map, startWith } from 'rxjs/operators';
+import {AbstractControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {observableCombineLatest} from './ui.utils';
+import {filter, map, startWith} from 'rxjs/operators';
 
 
 // tslint:disable:no-any

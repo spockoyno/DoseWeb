@@ -1,28 +1,28 @@
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {
-  FormGroup as AngularFormGroup,
-  FormArray as AngularFormArray,
-  FormControl as AngularFormControl,
   AbstractControl as AngularAbstractControl,
-  FormBuilder as AngularFormBuilder,
-  ValidatorFn as AngularValidatorFn,
+  AbstractControlOptions as AngularAbstractControlOptions,
   AsyncValidatorFn as AngularAsyncValidatorFn,
+  FormArray as AngularFormArray,
+  FormBuilder as AngularFormBuilder,
+  FormControl as AngularFormControl,
+  FormGroup as AngularFormGroup,
   ValidationErrors,
-  AbstractControlOptions as AngularAbstractControlOptions
+  ValidatorFn as AngularValidatorFn
 } from '@angular/forms';
 
 import './forms.extensions';
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 /**
  * The status of the control.
  */
 export type Status = 'VALID' | 'INVALID' | 'PENDING' | 'DISABLED';
 
-//Todo add get leafControl: FormControl<T> method, to get single-value control. Maybe not possible.
-//as can't add a generic function to a prototype.
-//But maybe define a PenultimateFormGroup /FormArray , whose next fields  are leaves, ie, have FormControls.
-//Or define a function.
+// Todo add get leafControl: FormControl<T> method, to get single-value control. Maybe not possible.
+// as can't add a generic function to a prototype.
+// But maybe define a PenultimateFormGroup /FormArray , whose next fields  are leaves, ie, have FormControls.
+// Or define a function.
 
 /**
  * Typed {@link AngularAbstractControl}.
@@ -264,7 +264,7 @@ type BuilderArgs<T> =
 /**
  * Typed {@link AngularFormBuilder}.
  */
-@Injectable({providedIn:'root'})
+@Injectable({providedIn: 'root'})
 export class FormBuilder extends AngularFormBuilder {
   group<T>(
     controlsConfig: { [K in keyof T]: BuilderArgs<T[K]> },
