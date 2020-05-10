@@ -1,5 +1,6 @@
 import {Interval} from './definitions.models';
 import {ThetaModel, TwoLogParameters} from './theta.model';
+
 export const twoLogTheta_MIN_DOMAIN = {
   emax_1: 0,
   emid_1: 0,
@@ -11,12 +12,12 @@ export const twoLogTheta_MIN_DOMAIN = {
 
 
 export const twoLogTheta_EXAMPLE_DOMAIN: Record<TwoLogParameters, Interval> = {
-  emax_1: {min: 0, step:  0.5, max: 1000},
-  emid_1: {min: 0.1, step:  0.5, max: 100},
-  h_1: {min: -10, step:  0.5, max: 10},
-  emax_2: {min: 0, step:  0.5, max: 1000},
-  emid_2: {min: 0.1, step:  0.5, max: 100},
-  h_2: {min: -10, step:  0.5, max: 10},
+  emax_1: {min: 0, step:  1, max: 1000},
+  emid_1: {min: 0.1, step:  1, max: 100},
+  h_1: {min: -10, step:  0.25, max: 10},
+  emax_2: {min: 0, step:  1, max: 1000},
+  emid_2: {min: 0.1, step:  1, max: 100},
+  h_2: {min: -10, step:  0.25, max: 10},
 
 };
 

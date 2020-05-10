@@ -1,7 +1,5 @@
-import { ModelTypes } from './theta.model'
-import { Interval } from './definitions.models'
-import {FormControl} from '../utils/forms.utils';
-import {Options} from 'ng5-slider';
+import {ModelTypes} from './theta.model';
+import {Interval} from './definitions.models';
 
 export interface ParameterInput {
   display: string
@@ -12,18 +10,18 @@ export interface ParameterInput {
 export interface ModelParameterInputs {
   modelType: ModelTypes
 
-  parameters: ParameterInput[]
+  parameters: ThetaElementInput[]
 }
 
 
-export interface ThetaElementInput extends Options{
-  model: ModelTypes
+export interface ThetaElementInput {
   parameter: string
+  value: number
 
   ceil: number
   floor: number
   step: number
-  value: number
+
 
 
 }

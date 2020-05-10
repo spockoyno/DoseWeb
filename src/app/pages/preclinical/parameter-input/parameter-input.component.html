@@ -1,8 +1,8 @@
 <div
- *ngFor="let row of input.parameterArray.controls">
+ *ngFor="let row of input.parameterArray">
 
  <fx-element-input
- [spec]="input.parameterRowInput(row)"
+ [form]="row"
  ></fx-element-input>
 
 </div>

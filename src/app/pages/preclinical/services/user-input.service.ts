@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
-import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from '../../../utils/forms.utils';
+import {FormBuilder, FormGroup} from '../../../utils/forms.utils';
 import {Store} from '@ngxs/store';
 import {AppState} from '../../../store/app.state';
-import {ModelParameterInputs, ParameterInput} from '../../../models/ui.models';
-import {ElementInput} from '../local.models';
+import {ModelParameterInputs, ThetaElementInput} from '../../../models/ui.models';
 
 @Injectable()
 export class UserInputService {
@@ -13,28 +12,16 @@ export class UserInputService {
 
     this.form = fb.group<ModelParameterInputs>({
       modelType: initTheta.modelType,
-      parameters: fb.array<ParameterInput>(
-        initTheta.parameters.map((value) => fb.group<ParameterInput>(value))
+      parameters: fb.array<ThetaElementInput>(
+        initTheta.parameters.map((value) => fb.group<ThetaElementInput>(value))
       ),
     })
   }
 
-  get parameterArray(): FormArray<ParameterInput> {
-    // @ts-ignore
-    return this.form.controls.parameters
+  get parameterArray(): FormGroup<ThetaElementInput>[] {
+
+    return this.form.get('parameters').controls as FormGroup<ThetaElementInput>[]
   }
 
-  parameterRowInput(control: AbstractControl<ParameterInput>): ElementInput {
-    const d = control.value
 
-    const ct=(control as FormGroup<ParameterInput>).controls.value as FormControl<number>
-    return {
-      display: d.display,
-      min: d.interval.min,
-      max: d.interval.max,
-      step: 0.1,
-      parameterKey: d.parameterKey,
-      control: ct
-    }
-  }
 }

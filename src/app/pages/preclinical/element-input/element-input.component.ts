@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
-import {ElementInput} from '../local.models';
-import {Options} from 'ng5-slider';
+import {Component, Input, OnInit} from '@angular/core';
+import {ThetaElementInput} from '../../../models/ui.models';
+import {FormControl, FormGroup} from '../../../utils/forms.utils';
 
 @Component({
   selector: 'fx-element-input',
@@ -10,20 +10,19 @@ import {Options} from 'ng5-slider';
 })
 export class ElementInputComponent  implements OnInit{
 
-  @Input() spec: ElementInput
+  @Input() form: FormGroup<ThetaElementInput>
 
+get options(){
+    return this.form.value
+}
 
-  options: Options = {
-    floor: 0,
-    ceil: 200,
-    step: 0.25,
-
-
-  }
-
+get sliderValueControl(): FormControl<number>{
+    return this.form.get('value') as FormControl<number>
+}
 
 
   ngOnInit(): void {
+
     window.setTimeout(() => {
       window.dispatchEvent(new Event('resize'));
     }, 0);

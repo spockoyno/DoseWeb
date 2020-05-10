@@ -29,9 +29,10 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { PlotlyViaCDNModule  } from 'angular-plotly.js';
-import {HAMMER_GESTURE_CONFIG, HammerModule} from '@angular/platform-browser';
-import { Ng5SliderModule } from 'ng5-slider';
+import {PlotlyViaCDNModule} from 'angular-plotly.js';
+import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import {Ng5SliderModule} from 'ng5-slider';
+
 PlotlyViaCDNModule.plotlyVersion = 'latest';
 PlotlyViaCDNModule.plotlyBundle = null;
 
