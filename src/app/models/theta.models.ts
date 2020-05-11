@@ -61,13 +61,13 @@ export const ceder_THETA: CedergreenTheta = {
 
 
 export const clinicalCorrect = {
-  e0: 1.1,
-  em: 1.1,
-  emid1: 1.1,
-  h1: 1.05,
+  e0: 1.2,
+  em: 1.2,
+  emid1: 1.2,
+  h1: 1.1,
   emax: 1.2,
-  emid2: 0.95,
-  h2: 0.95,
+  emid2: 1.2,
+  h2: 0.8,
 
 }
 

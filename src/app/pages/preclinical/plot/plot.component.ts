@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PlotService} from '../services/plot.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'fx-plot',
@@ -8,7 +9,10 @@ import {PlotService} from '../services/plot.service';
 })
 export class PlotComponent implements OnInit {
   plotlyConfig = { displayModeBar: false }
-  constructor(public service: PlotService) { }
+  showSlave$: Observable<boolean>
+  constructor(public service: PlotService) {
+    this.showSlave$ = service.showSlave.allValueChanges()
+  }
 
   ngOnInit(): void {
   }

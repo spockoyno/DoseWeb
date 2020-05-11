@@ -13,7 +13,14 @@
   ></plotly-plot>
   </div>
 
-<div class="slave">
+
+    <mat-slide-toggle [formControl]="service.showSlave">
+      show
+    </mat-slide-toggle>
+
+
+<div class="slave"
+*ngIf="showSlave$|async">
   <plotly-plot
     divId = "slave_plot"
     [data]="service.slavePlot$ | async"

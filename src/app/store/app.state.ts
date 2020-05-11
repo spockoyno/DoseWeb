@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Action, Selector, State, StateContext, StateToken} from '@ngxs/store';
-import {AppModel, PreclinicalModel, PreclinicalPlotData} from './app.model';
+import {AppModel, DosingModel, PreclinicalModel, PreclinicalPlotData} from './app.model';
 import {initialAppState} from './defaults.state';
 import {TwoLogsTheta} from '../models/theta.models';
 import {ChangedPreclinicalTheta} from './actions';
@@ -20,6 +20,19 @@ export class AppState {
   static twoLogsTheta(data: AppModel): TwoLogsTheta {
     return data.preclinical.twoLogisticsModel
   }
+
+
+   @Selector()
+  static dosingModel(data: AppModel): DosingModel {
+    return data.dosing
+  }
+
+
+   @Selector()
+  static preclinicalModel(data: AppModel): PreclinicalModel {
+    return data.preclinical
+  }
+
 
 
   @Selector()
