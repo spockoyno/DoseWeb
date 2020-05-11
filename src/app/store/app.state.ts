@@ -3,6 +3,7 @@ import {Selector, State, StateToken} from '@ngxs/store';
 import {AppModel, PreclinicalModel} from './app.model';
 import {initialAppState} from './defaults.state';
 import {ModelParameterInputs, ThetaElementInput,} from '../models/ui.models';
+import {TwoLogParameters} from '../models/theta.model';
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -18,9 +19,12 @@ export class AppState {
   }
 }
 
+// NB:  assume that TwoLogsModelParametr
 function twoLogsParameterInputs(d: PreclinicalModel): ModelParameterInputs {
   const t = d.thetaTwoLogsInput
-  const keys = Object.keys(t.parameters)
+
+    // @ts-ignore
+  const keys: TwoLogParameters[] = Object.keys(t.parameters)
   const params: ThetaElementInput[] = keys.map((key) => {
     return { parameter: key, value: t.parameters[key], floor: t.intervals[key].min,
     step: t.intervals[key].step,

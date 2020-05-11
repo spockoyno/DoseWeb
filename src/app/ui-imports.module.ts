@@ -21,7 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgPipesModule} from 'ngx-pipes';
 import {InputTrimModule} from 'ng2-trim-directive';
-import {GestureConfig, MatRippleModule} from '@angular/material/core';
+import {MatRippleModule} from '@angular/material/core';
 import {MatSliderModule} from '@angular/material/slider';
 import {ColorPickerModule} from 'ngx-color-picker';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -29,12 +29,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {PlotlyViaCDNModule} from 'angular-plotly.js';
-import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import {PlotlyModule} from 'angular-plotly.js';
 import {Ng5SliderModule} from 'ng5-slider';
 
-PlotlyViaCDNModule.plotlyVersion = 'latest';
-PlotlyViaCDNModule.plotlyBundle = null;
 
 @NgModule({
   declarations: [],
@@ -54,7 +51,7 @@ PlotlyViaCDNModule.plotlyBundle = null;
     MatTabsModule,
     MatTableModule,
     MatDialogModule,
-    PlotlyViaCDNModule,
+    PlotlyModule,
     MatGridListModule,
     MatCardModule,
     MatExpansionModule,
@@ -89,7 +86,7 @@ PlotlyViaCDNModule.plotlyBundle = null;
     MatTabsModule,
     MatTableModule,
     MatDialogModule,
-    PlotlyViaCDNModule,
+    PlotlyModule,
     MatGridListModule,
     MatCardModule,
     MatExpansionModule,
@@ -111,7 +108,7 @@ DragDropModule,
 
   ],
   providers: [
-    { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
+
   ]
 })
 export class UiImportsModule { }
