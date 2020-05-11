@@ -4,6 +4,7 @@ import {AppModel, PreclinicalModel} from './app.model';
 import {initialAppState} from './defaults.state';
 import {ModelParameterInputs, ThetaElementInput,} from '../models/ui.models';
 import {TwoLogParameters} from '../models/theta.model';
+import {TwoLogsTheta} from '../models/definitions.models';
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -17,6 +18,12 @@ export class AppState {
   static preclinical(data: AppModel): ModelParameterInputs {
     return twoLogsParameterInputs(data.preclinical)
   }
+   @Selector()
+  static twoLogsTheta(data: AppModel): TwoLogsTheta {
+    return data.preclinical.twoLogisticsModel
+  }
+
+
 }
 
 // NB:  assume that TwoLogsModelParametr

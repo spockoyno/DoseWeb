@@ -7,11 +7,14 @@ import {UiImportsModule} from '../../ui-imports.module';
 import {ComponentsModule} from '../../components/components.module';
 import {ElementInputComponent} from './element-input/element-input.component';
 import {PlotService} from './services/plot.service';
+import {TwoLogisticsInputService} from './services/two-logistics-input.service';
+import { TwoLogisticsComponent } from './two-logistics/two-logistics.component';
+import { ThetaRowComponent } from './theta-row/theta-row.component';
 
 
 @NgModule({
-  declarations: [PreclinicalComponent, ParameterInputComponent, ElementInputComponent],
-   providers: [UserInputService, PlotService],
+  declarations: [PreclinicalComponent, ParameterInputComponent, ElementInputComponent, TwoLogisticsComponent, ThetaRowComponent],
+   providers: [UserInputService, PlotService, TwoLogisticsInputService],
   exports: [
     PreclinicalComponent
   ],

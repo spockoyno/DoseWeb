@@ -1,17 +1,18 @@
 
 <div class="main" *ngIf="form">
   <div class="theta_name">
-    {{ form.value.parameter }}
+    {{ thetaName}}
   </div>
 
   <mat-slider
-    [min]="options.floor"
-    [max]="options.ceil"
-    [value]="options.value"
-    [step]="options.step"
+    [min]="specs.min"
+    [max]="specs.max"
+    [value]="specs.value"
+    [step]="specs.step"
     [thumbLabel]="true"
     (valueChange)="sliderChanged($event)"
   ></mat-slider>
 
   {{ form.value.value }}
 </div>
+
