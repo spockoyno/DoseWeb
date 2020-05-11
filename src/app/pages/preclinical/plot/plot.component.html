@@ -1,9 +1,25 @@
+<div class = "main">
+
+
+
+
 <div class="plotlies">
   <plotly-plot
     divId = "master_plot"
     [data]="service.masterPlot$ | async"
-    [layout]="service.layout"
+    [layout]="service.masterLayout"
     [config]="plotlyConfig"
 
   ></plotly-plot>
   </div>
+
+<div class="slave">
+  <plotly-plot
+    divId = "slave_plot"
+    [data]="service.slavePlot$ | async"
+    [layout]="service.slaveLayout"
+    [config]="plotlyConfig"
+
+  ></plotly-plot>
+</div>
+</div>

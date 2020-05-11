@@ -4,7 +4,7 @@ import {AppModel, PreclinicalModel, PreclinicalPlotData} from './app.model';
 import {initialAppState} from './defaults.state';
 import {TwoLogsTheta} from '../models/theta.models';
 import {ChangedPreclinicalTheta} from './actions';
-import {gridInclusive, twoLogModelZero} from '../models/model-functions';
+import {gridInclusive, twoLogModelMult, twoLogModelZero} from '../models/model-functions';
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -27,6 +27,18 @@ export class AppState {
    const doses = gridInclusive(data.preclinical.doseInterval)
     const theta = data.preclinical.twoLogisticsModel
     let response = doses.map(value => twoLogModelZero(theta, value))
+
+    // const ceder=twoLogToCeder(theta)
+    // response = doses.map(value => cedergreenModel(ceder, value))
+    return {dose: doses, response: response}
+
+  }
+
+  @Selector()
+  static   clinicalPlot(data: AppModel): PreclinicalPlotData   {
+   const doses = gridInclusive(data.preclinical.doseInterval)
+    const theta =data.preclinical.twoLogisticsModel
+    let response = doses.map(value => twoLogModelMult(theta, value))
 
     // const ceder=twoLogToCeder(theta)
     // response = doses.map(value => cedergreenModel(ceder, value))

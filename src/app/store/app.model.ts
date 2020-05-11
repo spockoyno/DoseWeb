@@ -1,9 +1,14 @@
 import {FactorInterval, TwoLogsTheta} from '../models/theta.models';
 
+export interface DosingModel  {
+  twoDoses: number[]
 
+}
 
 
 export interface PreclinicalModel  {
+
+
 
   doseInterval: FactorInterval
   twoLogisticsModel: TwoLogsTheta
@@ -12,7 +17,7 @@ export interface PreclinicalModel  {
 }
 
 export interface AppModel  {
-
+ dosing: DosingModel
   preclinical: PreclinicalModel;
 }
 

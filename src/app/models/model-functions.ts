@@ -1,4 +1,4 @@
-import {CedergreenTheta, FactorInterval, TwoLogsTheta} from './theta.models';
+import {CedergreenTheta, clinicalCorrect, FactorInterval, TwoLogsTheta} from './theta.models';
 
 
 export function twoLogModelOld(t: TwoLogsTheta, x: number ): number {
@@ -24,6 +24,15 @@ export function twoLogModelZero(t: TwoLogsTheta, x: number ): number {
   const stim =  t.em.value + (t.emax.value -t.em.value)/ (1 + (t.emid2.value/x)**t.h2.value)
 
   return stim * inhib/ t.em.value }
+
+export function twoLogModelMult(t: TwoLogsTheta, x: number ): number {
+
+  const a = clinicalCorrect
+
+  const inhib = t.e0.value*a.e0 + (t.em.value*a.em-t.e0.value*a.e0)/( 1 + (t.emid1.value*a.emid1/x)**t.h1.value*a.h1)
+  const stim =  t.em.value*a.em + (t.emax.value*a.emax -t.em.value*a.em)/ (1 + (t.emid2.value*a.emid2/x)**t.h2.value*a.h2)
+
+  return stim * inhib/ t.em.value*a.em }
 
 
 export function twoLogModel(t: TwoLogsTheta, x: number ): number {
