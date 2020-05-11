@@ -1,7 +1,7 @@
 {
   "name": "dose-web",
   "version": "0.0.0",
-  "main": "electron/dist/main.js",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "ng:serve": "ng serve",
@@ -15,7 +15,7 @@
     "start": "PORT=4200 npm run postinstall:electron && npm-run-all -p ng:serve electron:serve",
     "electron:serve": "wait-on http-get://localhost:4200/ && npm run electron:serve-tsc && electron . --serve",
     "electron:serve:dev": "wait-on http-get://localhost:4200/ && npm run electron:serve-tsc && electron . --serve --tools",
-    "electron:serve-tsc": "tsc -p electron "
+    "electron:serve-tsc": "tsc -p tsconfig-serve.json"
   },
   "prettier": {
     "semi": false,

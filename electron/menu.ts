@@ -3,7 +3,7 @@ import MenuItemConstructorOptions = Electron.MenuItemConstructorOptions;
 
 export function setMenu(): void {
 
-//@ts-nocheck
+
   const template: MenuItemConstructorOptions[] = [
     {
       label: 'Edit',
