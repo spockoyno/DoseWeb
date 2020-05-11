@@ -4,6 +4,7 @@
 
 
 <div class="plotlies">
+  <h3> Preclinical </h3>
   <plotly-plot
     divId = "master_plot"
     [data]="service.masterPlot$ | async"
@@ -14,14 +15,17 @@
   </div>
 
 
-    <mat-slide-toggle [formControl]="service.showSlave">
-      show
+    <mat-slide-toggle [formControl]="service.showSlave"
+    labelPosition="before">
+      <h3>Clinical</h3>
     </mat-slide-toggle>
 
 
 <div class="slave"
-*ngIf="showSlave$|async">
+>
+
   <plotly-plot
+    *ngIf="showSlave$|async"
     divId = "slave_plot"
     [data]="service.slavePlot$ | async"
     [layout]="service.slaveLayout"

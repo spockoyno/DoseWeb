@@ -45,7 +45,8 @@ figure {
 
 @import 'material';
 @import 'nouislider';
-//@import 'variables';
+@import 'variables';
+@import '~katex/dist/katex.css';
 
 //@import '~material-design-icons/iconfont/material-icons.css';
 

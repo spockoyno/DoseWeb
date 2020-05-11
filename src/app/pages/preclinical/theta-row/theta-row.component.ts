@@ -1,7 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {FormGroup} from '../../../utils/forms.utils';
-import {ThetaSpec} from '../../../models/theta.models';
 import {MatSliderChange} from '@angular/material/slider';
+import {ThetaSpec} from '../../../models/common';
+import {KatexOptions} from 'ng-katex';
 
 @Component({
   selector: 'fx-theta-row',
@@ -10,8 +11,11 @@ import {MatSliderChange} from '@angular/material/slider';
 })
 export class ThetaRowComponent  {
 
+  options: KatexOptions = {
+    displayMode: true,
+  }
   @Input() form: FormGroup<ThetaSpec>
- @Input() thetaName: string = ''
+ @Input() thetaNameTex: string = ''
 
 
   get specs(){

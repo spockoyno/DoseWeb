@@ -1,7 +1,7 @@
 
 <div class="main" *ngIf="form">
   <div class="theta_name">
-    {{ thetaName}}
+    <ng-katex [equation]="thetaNameTex" [options]="options"></ng-katex>
   </div>
 
   <mat-slider

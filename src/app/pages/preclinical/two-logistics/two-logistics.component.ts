@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {TwoLogisticsInputService} from '../services/two-logistics-input.service';
+import {twoLogsTheta_TEX, TwoLogsThetaTex} from '../../../models/theta-two-logs.models';
 
 @Component({
   selector: 'fx-two-logistics',
@@ -8,6 +9,7 @@ import {TwoLogisticsInputService} from '../services/two-logistics-input.service'
 })
 export class TwoLogisticsComponent  {
 
+  tex: TwoLogsThetaTex = twoLogsTheta_TEX
   constructor(public input: TwoLogisticsInputService) { }
 
 

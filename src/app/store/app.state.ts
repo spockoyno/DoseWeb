@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Action, Selector, State, StateContext, StateToken} from '@ngxs/store';
 import {AppModel, DosingModel, PreclinicalModel, PreclinicalPlotData} from './app.model';
 import {initialAppState} from './defaults.state';
-import {TwoLogsTheta} from '../models/theta.models';
+import {TwoLogsTheta} from '../models/theta-two-logs.models';
 import {ChangedPreclinicalTheta} from './actions';
 import {gridInclusive, twoLogModelMult, twoLogModelZero} from '../models/model-functions';
 

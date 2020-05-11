@@ -4,9 +4,8 @@ import {Data} from '@angular/router';
 import {Store} from '@ngxs/store';
 import {AppState} from '../../../store/app.state';
 import {DosingModel, PreclinicalPlotData} from '../../../store/app.model';
-import {LayoutPlotly} from '../../../models/common';
+import {FactorInterval, LayoutPlotly} from '../../../models/common';
 import {FormBuilder, FormControl, FormGroup} from '../../../utils/forms.utils';
-import {FactorInterval} from '../../../models/theta.models';
 
 @Injectable()
 export class PlotService {
@@ -36,7 +35,7 @@ export class PlotService {
     store.select(AppState.clinicalPlot).subscribe(value =>
     this.slavePlot$.next(trace(value, '#4477aa')))
 
-    this.slaveLayout = makeLayout('CLINICAL MODEL')
+    this.slaveLayout = makeSlaveLayout()
  const initDoses = store.selectSnapshot(AppState.dosingModel)
     this.dosingForm = fb.group<DosingModel>({twoDoses: [initDoses.twoDoses]})
 
@@ -72,12 +71,12 @@ export function makeMasterLayout() {
     },
     autosize: false,
     showlegend: false,
- title: "PRECLINICAL MODEL",
+
     margin: {
       l: 30,
       r: margin,
       b: 30,
-      t: 30,
+      t: 10,
       pad: 5
     },
 
@@ -90,7 +89,7 @@ export function makeMasterLayout() {
 }
 
 
-export function makeLayout(title: string) {
+export function makeSlaveLayout() {
   const margin = 10
   return {
     width: 600,
@@ -101,12 +100,11 @@ export function makeLayout(title: string) {
       type: 'log'
     },
     yaxis: {
-      title: '<b>Response </b>',
       automargin: true
     },
     autosize: false,
     showlegend: false,
- title: title,
+
     margin: {
       l: 30,
       r: margin,

@@ -1,4 +1,4 @@
-import {TwoLogsTheta} from '../models/theta.models';
+import {TwoLogsTheta} from '../models/theta-two-logs.models';
 
 export class ChangedPreclinicalTheta{
 

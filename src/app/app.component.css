@@ -1,10 +1,14 @@
+.super{ display: flex;
+  flex-direction: column;
+justify-content: space-between;
+}
 
 .main{
   display: flex;
 flex-direction: column;
-  justify-content: stretch;
-  flex-grow: 1;
-  align-self: stretch;
+wrap-option: false;
+
+  min-height: 100vh;
 }
 
 .header {
@@ -13,15 +17,15 @@ flex-direction: column;
   /*padding-bottom: 0.45rem;*/
   background-color: #4dbeee;
   align-items:center;
-  align-self: stretch;
-  height: 6rem;
+  /*align-self: stretch;*/
+  height: 5.5rem;
   margin: -0.5rem;
 
 
 
 }
 
-.words{
+.header>.words{
   font-weight: bold;
   color:#232b2b;
   font-size: xx-large;
@@ -30,21 +34,26 @@ margin-left: 2rem;
 
 .decider_icon{
   display: flex;
-  margin-left: 2.25rem;
+  margin-left: 2.5rem;
   transform: scale(2.5);
 }
 
+.pre_clinical{
+  flex: 1
+}
+.bott{
+  /*display: flex;*/
+  /* flex-direction: column-reverse;*/
 
-/*.bottom {*/
-/*  display: flex;*/
-/*  background-color: #1abc9c;*/
+  background-color: #4dbeee;
+  height: 2rem;
 
-
-/*  height: 2.5rem;*/
 /*margin-left: -0.5rem;*/
 /*margin-right: -0.5rem;*/
-/*margin-top: auto;*/
-/*!*align-self: flex-end;*!*/
 
+/*align-self: flex-end;*/
+/*align-self: flex-end;*/
+/*!*margin-top: auto;*!*/
+/*position: absolute;*/
 
-/*}*/
+}
