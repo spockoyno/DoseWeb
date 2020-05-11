@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FormGroup} from '../../../utils/forms.utils';
-import {ThetaSpec} from '../../../models/definitions.models';
+import {ThetaSpec} from '../../../models/theta.models';
+import {MatSliderChange} from '@angular/material/slider';
 
 @Component({
   selector: 'fx-theta-row',
@@ -19,9 +20,17 @@ export class ThetaRowComponent  {
 
 
   sliderChanged($event: number) {
-    const current = this.form.value
+
+
+    const current: ThetaSpec = this.form.value
+
     this.form.setValue({... current, value: $event}, {onlySelf: false,
       emitEvent: true})
   }
 
+
+changed($event: MatSliderChange){
+    console.log($event.value)
+
+}
 }

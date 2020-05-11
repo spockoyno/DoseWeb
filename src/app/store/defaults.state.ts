@@ -1,11 +1,10 @@
 import {AppModel, PreclinicalModel} from './app.model';
-import {twoLogTheta_EXAMPLE} from '../models/two-logs.model';
-import {twoLogs_THETA} from '../models/definitions.models';
+import {twoLogs_THETA} from '../models/theta.models';
 
 
 export function initialAppState( ): AppModel {
   const preclinical: PreclinicalModel = {
-    thetaTwoLogsInput: twoLogTheta_EXAMPLE,
+   doseInterval: {min: 0.1, step: 0.25, max: 1000 },
     twoLogisticsModel: twoLogs_THETA
   };
 

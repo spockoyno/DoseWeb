@@ -1,9 +1,11 @@
-import {TwoLogsModel} from '../models/theta.model';
-import {TwoLogsTheta} from '../models/definitions.models';
+import {FactorInterval, TwoLogsTheta} from '../models/theta.models';
+
+
 
 
 export interface PreclinicalModel  {
-  thetaTwoLogsInput: TwoLogsModel;
+
+  doseInterval: FactorInterval
   twoLogisticsModel: TwoLogsTheta
 
 
@@ -12,4 +14,11 @@ export interface PreclinicalModel  {
 export interface AppModel  {
 
   preclinical: PreclinicalModel;
+}
+
+
+export interface PreclinicalPlotData  {
+ dose:  number[]
+  response:  number[]
+
 }

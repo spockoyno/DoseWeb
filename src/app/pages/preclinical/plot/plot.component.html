@@ -1,0 +1,9 @@
+<div class="plotlies">
+  <plotly-plot
+    divId = "master_plot"
+    [data]="service.masterPlot$ | async"
+    [layout]="service.layout"
+    [config]="plotlyConfig"
+
+  ></plotly-plot>
+  </div>
