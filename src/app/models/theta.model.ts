@@ -3,12 +3,12 @@ import {Interval} from './definitions.models';
 export type ModelTypes = 'TwoLogs'
 
 export type TwoLogParameters =
-  | 'emax_1'
-  | 'emid_1'
-  | 'h_1'
-  | 'emax_2'
-  | 'emid_2'
-  | 'h_2'
+  | 'emax1'
+  | 'emid1'
+  | 'h1'
+  | 'emax2'
+  | 'emid2'
+  | 'h2'
 
 export type GammaParameetrNames = 'alpha' | 'gamma'
 

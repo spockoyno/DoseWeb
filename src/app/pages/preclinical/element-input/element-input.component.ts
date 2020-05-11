@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ThetaElementInput} from '../../../models/ui.models';
-import {FormControl, FormGroup} from '../../../utils/forms.utils';
+import {FormGroup} from '../../../utils/forms.utils';
 
 @Component({
   selector: 'fx-element-input',
@@ -8,7 +8,7 @@ import {FormControl, FormGroup} from '../../../utils/forms.utils';
   styleUrls: ['./element-input.component.scss'],
 
 })
-export class ElementInputComponent  implements OnInit{
+export class ElementInputComponent {
 
   @Input() form: FormGroup<ThetaElementInput>
 
@@ -16,18 +16,8 @@ get options(){
     return this.form.value
 }
 
-get sliderValueControl(): FormControl<number>{
-    return this.form.get('value') as FormControl<number>
-}
 
-
-  ngOnInit(): void {
-
-    window.setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 0);
-
+  sliderChanged($event: number) {
+    this.form.get('value').setValue($event)
   }
-
-
 }

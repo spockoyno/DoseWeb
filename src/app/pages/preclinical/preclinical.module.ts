@@ -6,11 +6,12 @@ import {ParameterInputComponent} from './parameter-input/parameter-input.compone
 import {UiImportsModule} from '../../ui-imports.module';
 import {ComponentsModule} from '../../components/components.module';
 import {ElementInputComponent} from './element-input/element-input.component';
+import {PlotService} from './services/plot.service';
 
 
 @NgModule({
   declarations: [PreclinicalComponent, ParameterInputComponent, ElementInputComponent],
-   providers: [UserInputService],
+   providers: [UserInputService, PlotService],
   exports: [
     PreclinicalComponent
   ],

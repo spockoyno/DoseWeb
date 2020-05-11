@@ -1,6 +1,13 @@
-::ng-deep.ng5-slider-pointer {
-  outline: none !important;
+.mat-slider{
+  min-width: 20rem;
+  margin-left: 0.5rem;
 }
-.ng5-slider{
- max-width: 25rem;
+
+.main{
+  display: flex;
+  margin-left: 0.5rem;
+
+}
+.theta_name{
+  min-width: 3.5rem;
 }
