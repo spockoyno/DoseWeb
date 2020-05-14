@@ -2,6 +2,7 @@ import {TwoLogsTheta} from '../models/theta-two-logs.models';
 import {FactorInterval} from '../models/common';
 
 export interface DosingModel  {
+
   twoDoses: number[]
 
 }

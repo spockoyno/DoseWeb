@@ -44,9 +44,24 @@ figure {
 }
 
 @import 'material';
-@import 'nouislider';
 @import 'variables';
 @import '~katex/dist/katex.css';
+
+@import '~nouislider/distribute/nouislider.min.css';
+@import 'variables';
+
+::ng-deep .noUi-connect {
+  background-color: #fc3718;
+}
+
+
+::ng-deep .noUi-value-large {
+  margin-top: 6px;
+}
+
+::ng-deep .noUi-tooltip {
+  font-size: 14px;
+}
 
 //@import '~material-design-icons/iconfont/material-icons.css';
 

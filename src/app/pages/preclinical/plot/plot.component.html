@@ -1,36 +1,32 @@
-<div class = "main">
-
-
-
-
-<div class="plotlies">
-  <h3> Preclinical </h3>
-  <plotly-plot
-    divId = "master_plot"
-    [data]="service.masterPlot$ | async"
-    [layout]="service.masterLayout"
-    [config]="plotlyConfig"
-
-  ></plotly-plot>
+<div class="main">
+  <div class="plotlies">
+    <h3>Preclinical</h3>
+    <plotly-plot
+      divId="master_plot"
+      [data]="plotService.masterPlot$ | async"
+      [layout]="plotService.masterLayout"
+      [config]="plotlyConfig"
+    ></plotly-plot>
   </div>
+  <form [formGroup]="dosingService.dosingForm">
+    <nouislider class="noUi" [min]="0" [max]="2000" [step]="1" [formControl]="dosingService.dosingForm.get('twoDoses')"></nouislider>
+  </form>
 
 
-    <mat-slide-toggle [formControl]="service.showSlave"
-    labelPosition="before">
-      <h3>Clinical</h3>
-    </mat-slide-toggle>
+  <mat-slide-toggle
+    [formControl]="plotService.showSlave"
+    labelPosition="before"
+  >
+    <h3>Clinical</h3>
+  </mat-slide-toggle>
 
-
-<div class="slave"
->
-
-  <plotly-plot
-    *ngIf="showSlave$|async"
-    divId = "slave_plot"
-    [data]="service.slavePlot$ | async"
-    [layout]="service.slaveLayout"
-    [config]="plotlyConfig"
-
-  ></plotly-plot>
-</div>
+  <div class="slave">
+    <plotly-plot
+      *ngIf="showSlave$ | async"
+      divId="slave_plot"
+      [data]="plotService.slavePlot$ | async"
+      [layout]="plotService.slaveLayout"
+      [config]="plotlyConfig"
+    ></plotly-plot>
+  </div>
 </div>

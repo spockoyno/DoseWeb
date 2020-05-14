@@ -3,9 +3,9 @@ import {BehaviorSubject} from 'rxjs';
 import {Data} from '@angular/router';
 import {Store} from '@ngxs/store';
 import {AppState} from '../../../store/app.state';
-import {DosingModel, PreclinicalPlotData} from '../../../store/app.model';
-import {FactorInterval, LayoutPlotly} from '../../../models/common';
-import {FormBuilder, FormControl, FormGroup} from '../../../utils/forms.utils';
+import {PreclinicalPlotData} from '../../../store/app.model';
+import {LayoutPlotly} from '../../../models/common';
+import {FormBuilder, FormControl} from '../../../utils/forms.utils';
 
 @Injectable()
 export class PlotService {
@@ -13,15 +13,15 @@ export class PlotService {
   masterPlot$: BehaviorSubject<Data[]>
   slaveLayout: LayoutPlotly
  slavePlot$: BehaviorSubject<Data[]>
-  dosingForm: FormGroup<DosingModel>
-  dosesRange:  FactorInterval
+
+
 
   showSlave: FormControl<boolean>
   constructor(store: Store, fb: FormBuilder) {
 
 
     const initMaster = store.selectSnapshot(AppState.preclinicalPlot)
-    this.dosesRange = store.selectSnapshot(AppState.preclinicalModel).doseInterval
+
     this.masterPlot$ = new BehaviorSubject<Data[]>(trace(initMaster, '#ee6677'))
     store.select(AppState.preclinicalPlot).subscribe(value =>
     this.masterPlot$.next(trace(value, '#ee6677')))
@@ -36,8 +36,8 @@ export class PlotService {
     this.slavePlot$.next(trace(value, '#4477aa')))
 
     this.slaveLayout = makeSlaveLayout()
- const initDoses = store.selectSnapshot(AppState.dosingModel)
-    this.dosingForm = fb.group<DosingModel>({twoDoses: [initDoses.twoDoses]})
+
+
 
   }
 }

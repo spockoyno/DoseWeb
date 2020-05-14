@@ -18,7 +18,6 @@ export class TwoLogisticsInputService {
   }
   @Dispatch()
   thetaUpdated(data: TwoLogsTheta){
-    console.log(data)
     return new ChangedPreclinicalTheta(data)
   }
 

@@ -3,7 +3,8 @@ import {twoLogs_THETA} from '../models/theta-two-logs.models';
 
 
 export function initialAppState( ): AppModel {
-  const dosing = { twoDoses: [200, 500]}
+  const dosing = { twoDoses: [200, 500],
+  }
   const preclinical: PreclinicalModel = {
 
 
