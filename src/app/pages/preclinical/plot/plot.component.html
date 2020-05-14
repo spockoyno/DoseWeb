@@ -8,9 +8,6 @@
       [config]="plotlyConfig"
     ></plotly-plot>
   </div>
-  <form [formGroup]="dosingService.dosingForm">
-    <nouislider class="noUi" [min]="0" [max]="2000" [step]="1" [formControl]="dosingService.dosingForm.get('twoDoses')"></nouislider>
-  </form>
 
 
   <mat-slide-toggle

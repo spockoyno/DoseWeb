@@ -13,21 +13,6 @@ export function biHillModel(t: BiHillTheta, x: number ): number {
   return stim * inhib/ t.em.value }
 
 
-//from JSFit paper, eq. 2
-export function biHillDownModel(t: BiHillTheta, x: number ): number {
-
-
-
-  return  t.e0.value + (t.em.value-t.e0.value)/( 1 + (t.emid1.value/x)**t.h1.value) }
-
-//from JSFit paper, eq. 3
-export function biHillUpModel(t: BiHillTheta, x: number ): number {
-
-
-  return   t.em.value + (t.emax.value -t.em.value)/ (1 + (t.emid2.value/x)**t.h2.value)
-
-   }
-
 
 //stop-gap function with correction to parameters
 export function biHillModelCorrected(t: BiHillTheta, x: number ): number {

@@ -105,7 +105,8 @@ export function makeSlaveLayout() {
       type: 'log'
     },
     yaxis: {
-      automargin: true
+      automargin: true,
+
     },
     autosize: false,
     showlegend: false,

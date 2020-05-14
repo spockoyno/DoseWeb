@@ -4,7 +4,7 @@ import {AppModel, DosingModel, PreclinicalBiHillPlotData, PreclinicalModel} from
 import {initialAppState} from './defaults.state';
 import {BiHillTheta} from '../models/biphasic-hill.model';
 import {ChangedPreclinicalTheta} from './actions';
-import {biHillModel, biHillModelCorrected, gridInclusive} from '../models/model-functions';
+import {biHillModel, gridInclusive} from '../models/model-functions';
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -51,10 +51,9 @@ export class AppState {
   static   clinicalPlot(data: AppModel): PreclinicalBiHillPlotData   {
    const doses = gridInclusive(data.preclinical.doseInterval)
     const theta =data.preclinical.twoLogisticsModel
-    let response = doses.map(value => biHillModelCorrected(theta, value))
+    let response = doses.map(value => biHillModel(theta, value/10))
 
-    // const ceder=twoLogToCeder(theta)
-    // response = doses.map(value => cedergreenModel(ceder, value))
+
     return {dose: doses, response: response}
 
   }
