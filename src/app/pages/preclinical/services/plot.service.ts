@@ -44,19 +44,6 @@ export class PlotService {
 
 
 function trace(data: PreclinicalBiHillPlotData, colour: string): Data[]{
-  const ans = []
-
-  if(data.downResponse!==undefined){
-    const down = {
-      x: data.dose,
-      y: data.downResponse,
-      mode: 'lines',
-      line: {width: 4, color: 'green'}
-    } as Data
-    ans.push(down)
-
-
-  }
 
   const response = {
     x: data.dose,
@@ -64,23 +51,11 @@ function trace(data: PreclinicalBiHillPlotData, colour: string): Data[]{
     mode: 'lines',
     line: {width: 4, color:colour}
   } as Data
-  ans.push(response)
-
-  if(data.upResponse!==undefined){
-    const up = {
-      x: data.dose,
-      y: data.upResponse,
-      mode: 'lines',
-      line: {width: 4, color: 'black'}
-    } as Data
-    ans.push(up)
-
-
-  }
 
 
 
-  return  ans
+
+  return  [response]
 }
 
 

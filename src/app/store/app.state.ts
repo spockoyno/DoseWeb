@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Action, Selector, State, StateContext, StateToken} from '@ngxs/store';
-import {AppModel, DosingModel, PreclinicalModel, PreclinicalBiHillPlotData} from './app.model';
+import {AppModel, DosingModel, PreclinicalBiHillPlotData, PreclinicalModel} from './app.model';
 import {initialAppState} from './defaults.state';
 import {BiHillTheta} from '../models/biphasic-hill.model';
 import {ChangedPreclinicalTheta} from './actions';
-import {gridInclusive, biHillModelCorrected, biHillModel, biHillUpModel, biHillDownModel} from '../models/model-functions';
+import {biHillModel, biHillModelCorrected, gridInclusive} from '../models/model-functions';
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -40,11 +40,10 @@ export class AppState {
    const doses = gridInclusive(data.preclinical.doseInterval)
     const theta = data.preclinical.twoLogisticsModel
    const  response = doses.map(value => biHillModel(theta, value))
-    const  responseUp = doses.map(value => biHillUpModel(theta, value))
-    const  responseDown = doses.map(value => biHillDownModel(theta, value))
 
 
-    return {dose: doses, response: response, downResponse: responseDown, upResponse: responseUp}
+
+    return {dose: doses, response: response}
 
   }
 

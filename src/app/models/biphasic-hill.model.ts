@@ -45,21 +45,17 @@ export const clinicalTwoLogsTheta_CORRECTED: BiHillThetaValues = {
 
 
 export const twoLogsTheta_TEX: BiHillThetaTex = {
-  e0: "E_0",
-  em: "E_m",
-  emid1: "D_{50}",
-  h1: "h_D",
-  emax: "E_{\\max}",
-  emid2: "U_{50}",
-  h2: "h_U",
+  e0: "A_0",
+  em: "A_{\\infty}",
+  emid1: "A_{50}",
+  h1: "\\alpha",
+  emax: "B_{\\infty}",
+  emid2: "B_{50}",
+  h2: "\\beta",
 
 }
 
+export const biHillModel_TEX= "\\left(A_0 + \\frac{A_{\\infty} -A_0}{1+(A_{50}/x)^{\\alpha}}\\right) \\times \\left(  A_{\\infty}+ \\frac{B_{\\infty} -A_{\\infty}}{1+(B_{50}/x)^{\\beta}}\\right)/A_{\\infty}"
 
-
-export interface BiHillResponse  {
-  down: number
-  up: number
-  both: number
-
-}
+export const biHillModel_TEX_A= "E = \\left(A_0 + \\frac{A_{\\infty} -A_0}{1+(A_{50}/x)^{\\alpha}}\\right)"
+export const biHillModel_TEX_B= "\\quad\\times \\left(  A_{\\infty}+ \\frac{B_{\\infty} -A_{\\infty}}{1+(B_{50}/x)^{\\beta}}\\right)/A_{\\infty}"

@@ -2,10 +2,22 @@
 <div class = "main">
 
 
-<h3> Biphasic Hill</h3>
+<button
+  class="equation_button"
+mat-raised-button
+(click)="formulaClicked()"
+
+>
+<b> Biphasic Hill</b>
+  </button>
 
 <fx-two-logistics></fx-two-logistics>
+  <ng-container *ngIf="equationVisible">
+  <ng-katex [equation]="equation_A" [options]="options"></ng-katex>
+  <ng-katex [equation]="equation_B" [options]="options"></ng-katex>
+  </ng-container>
 
 </div>
   <fx-plot></fx-plot>
+
 </div>

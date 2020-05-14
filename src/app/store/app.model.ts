@@ -27,7 +27,5 @@ export interface AppModel  {
 export interface PreclinicalBiHillPlotData  {
  dose:  number[]
   response:  number[]
-  downResponse?:  number[]
-  upResponse?:  number[]
 
 }
