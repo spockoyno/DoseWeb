@@ -1,9 +1,9 @@
 import {ThetaSpec} from './common';
 
-export type TwoLogsThetaValues =  TwoLogsTheta<number>
-export type TwoLogsThetaTex = TwoLogsTheta<string>
+export type BiHillThetaValues =  BiHillTheta<number>
+export type BiHillThetaTex = BiHillTheta<string>
 
-export interface TwoLogsTheta<T = ThetaSpec>  {
+export interface BiHillTheta<T = ThetaSpec>  {
   e0: T
   em: T
   emid1:  T
@@ -16,7 +16,7 @@ export interface TwoLogsTheta<T = ThetaSpec>  {
 }
 
 
-export const twoLogs_THETA: TwoLogsTheta = {
+export const twoLogs_THETA: BiHillTheta = {
   e0: {min: 0, step:  0.1, value:10, max: 1000},
   em: {min: 0.1, step:  0.1, value:100, max: 1000},
   emid1: {min: 0.1, step:  0.1, value:10, max: 1000},
@@ -29,7 +29,7 @@ export const twoLogs_THETA: TwoLogsTheta = {
 
 
 
-export const clinicalTwoLogsTheta_CORRECTED: TwoLogsThetaValues = {
+export const clinicalTwoLogsTheta_CORRECTED: BiHillThetaValues = {
   e0: 1.2,
   em: 1.2,
   emid1: 1.2,
@@ -44,7 +44,7 @@ export const clinicalTwoLogsTheta_CORRECTED: TwoLogsThetaValues = {
 
 
 
-export const twoLogsTheta_TEX: TwoLogsThetaTex = {
+export const twoLogsTheta_TEX: BiHillThetaTex = {
   e0: "E_0",
   em: "E_m",
   emid1: "D_{50}",

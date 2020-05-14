@@ -67,7 +67,8 @@ export function makeMasterLayout() {
     },
     yaxis: {
       title: '<b>Response </b>',
-      automargin: true
+      automargin: true,
+      rangemode: 'tozero'
     },
     autosize: false,
     showlegend: false,

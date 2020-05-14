@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Action, Selector, State, StateContext, StateToken} from '@ngxs/store';
 import {AppModel, DosingModel, PreclinicalModel, PreclinicalPlotData} from './app.model';
 import {initialAppState} from './defaults.state';
-import {TwoLogsTheta} from '../models/theta-two-logs.models';
+import {BiHillTheta} from '../models/biphasic-hill.model';
 import {ChangedPreclinicalTheta} from './actions';
 import {gridInclusive, twoLogModelMult, twoLogModelZero} from '../models/model-functions';
 
@@ -17,7 +17,7 @@ type AppStateContext = StateContext<AppModel>
 export class AppState {
 
    @Selector()
-  static twoLogsTheta(data: AppModel): TwoLogsTheta {
+  static twoLogsTheta(data: AppModel): BiHillTheta {
     return data.preclinical.twoLogisticsModel
   }
 

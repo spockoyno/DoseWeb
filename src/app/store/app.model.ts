@@ -1,4 +1,4 @@
-import {TwoLogsTheta} from '../models/theta-two-logs.models';
+import {BiHillTheta} from '../models/biphasic-hill.model';
 import {FactorInterval} from '../models/common';
 
 export interface DosingModel  {
@@ -13,7 +13,7 @@ export interface PreclinicalModel  {
 
 
   doseInterval: FactorInterval
-  twoLogisticsModel: TwoLogsTheta
+  twoLogisticsModel: BiHillTheta
 
 
 }

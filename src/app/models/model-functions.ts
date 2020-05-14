@@ -1,16 +1,16 @@
-import {clinicalTwoLogsTheta_CORRECTED, TwoLogsTheta} from './theta-two-logs.models';
+import {clinicalTwoLogsTheta_CORRECTED, BiHillTheta} from './biphasic-hill.model';
 import {FactorInterval} from './common';
 import {CedergreenTheta} from './cedergreen.model';
 
 
-export function twoLogModelOld(t: TwoLogsTheta, x: number ): number {
+export function twoLogModelOld(t: BiHillTheta, x: number ): number {
 
   const first = t.em.value / (1 + (t.emid1.value  / x) ** t.h1.value );
   const second = t.emax.value  / (1 + (t.emid2.value  / x) ** t.h2.value );
 
   return first * second; }
 
-export function twoLogModelNu(t: TwoLogsTheta, x: number ): number {
+export function twoLogModelNu(t: BiHillTheta, x: number ): number {
 
   const first = 1/( 1 + (t.emid1.value/x)**t.h1.value)
   const second =  t.emax.value + (t.em.value -t.emax.value)/ (1 + (t.emid2.value/x)**t.h2.value)
@@ -18,7 +18,7 @@ export function twoLogModelNu(t: TwoLogsTheta, x: number ): number {
 
   return first * second; }
 
-export function twoLogModelZero(t: TwoLogsTheta, x: number ): number {
+export function twoLogModelZero(t: BiHillTheta, x: number ): number {
 
 
 
@@ -27,7 +27,7 @@ export function twoLogModelZero(t: TwoLogsTheta, x: number ): number {
 
   return stim * inhib/ t.em.value }
 
-export function twoLogModelMult(t: TwoLogsTheta, x: number ): number {
+export function twoLogModelMult(t: BiHillTheta, x: number ): number {
 
   const a = clinicalTwoLogsTheta_CORRECTED
 
@@ -37,7 +37,7 @@ export function twoLogModelMult(t: TwoLogsTheta, x: number ): number {
   return stim * inhib/ t.em.value*a.em }
 
 
-export function twoLogModel(t: TwoLogsTheta, x: number ): number {
+export function twoLogModel(t: BiHillTheta, x: number ): number {
 
   const first = t.em.value / (1 + (t.emid1.value  / x) ** t.h1.value );
   const second = t.emax.value  / (1 + (t.emid2.value  / x) ** t.h2.value );
