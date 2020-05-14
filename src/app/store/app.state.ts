@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Action, Selector, State, StateContext, StateToken} from '@ngxs/store';
-import {AppModel, DosingModel, PreclinicalModel, PreclinicalPlotData} from './app.model';
+import {AppModel, DosingModel, PreclinicalModel, PreclinicalBiHillPlotData} from './app.model';
 import {initialAppState} from './defaults.state';
 import {BiHillTheta} from '../models/biphasic-hill.model';
 import {ChangedPreclinicalTheta} from './actions';
-import {gridInclusive, twoLogModelMult, twoLogModelZero} from '../models/model-functions';
+import {gridInclusive, biHillModelCorrected, biHillModel, biHillUpModel, biHillDownModel} from '../models/model-functions';
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -36,22 +36,23 @@ export class AppState {
 
 
   @Selector()
-  static   preclinicalPlot(data: AppModel): PreclinicalPlotData   {
+  static   preclinicalPlot(data: AppModel): PreclinicalBiHillPlotData   {
    const doses = gridInclusive(data.preclinical.doseInterval)
     const theta = data.preclinical.twoLogisticsModel
-    let response = doses.map(value => twoLogModelZero(theta, value))
+   const  response = doses.map(value => biHillModel(theta, value))
+    const  responseUp = doses.map(value => biHillUpModel(theta, value))
+    const  responseDown = doses.map(value => biHillDownModel(theta, value))
 
-    // const ceder=twoLogToCeder(theta)
-    // response = doses.map(value => cedergreenModel(ceder, value))
-    return {dose: doses, response: response}
+
+    return {dose: doses, response: response, downResponse: responseDown, upResponse: responseUp}
 
   }
 
   @Selector()
-  static   clinicalPlot(data: AppModel): PreclinicalPlotData   {
+  static   clinicalPlot(data: AppModel): PreclinicalBiHillPlotData   {
    const doses = gridInclusive(data.preclinical.doseInterval)
     const theta =data.preclinical.twoLogisticsModel
-    let response = doses.map(value => twoLogModelMult(theta, value))
+    let response = doses.map(value => biHillModelCorrected(theta, value))
 
     // const ceder=twoLogToCeder(theta)
     // response = doses.map(value => cedergreenModel(ceder, value))

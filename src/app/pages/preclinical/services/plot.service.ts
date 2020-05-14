@@ -3,7 +3,7 @@ import {BehaviorSubject} from 'rxjs';
 import {Data} from '@angular/router';
 import {Store} from '@ngxs/store';
 import {AppState} from '../../../store/app.state';
-import {PreclinicalPlotData} from '../../../store/app.model';
+import {PreclinicalBiHillPlotData} from '../../../store/app.model';
 import {LayoutPlotly} from '../../../models/common';
 import {FormBuilder, FormControl} from '../../../utils/forms.utils';
 
@@ -43,15 +43,44 @@ export class PlotService {
 }
 
 
-function trace(data: PreclinicalPlotData, colour: string): Data[]{
+function trace(data: PreclinicalBiHillPlotData, colour: string): Data[]{
+  const ans = []
 
-  const line = {
+  if(data.downResponse!==undefined){
+    const down = {
+      x: data.dose,
+      y: data.downResponse,
+      mode: 'lines',
+      line: {width: 4, color: 'green'}
+    } as Data
+    ans.push(down)
+
+
+  }
+
+  const response = {
     x: data.dose,
     y: data.response,
     mode: 'lines',
     line: {width: 4, color:colour}
   } as Data
-  return [line]
+  ans.push(response)
+
+  if(data.upResponse!==undefined){
+    const up = {
+      x: data.dose,
+      y: data.upResponse,
+      mode: 'lines',
+      line: {width: 4, color: 'black'}
+    } as Data
+    ans.push(up)
+
+
+  }
+
+
+
+  return  ans
 }
 
 

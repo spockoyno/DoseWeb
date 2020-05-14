@@ -20,10 +20,10 @@ export const twoLogs_THETA: BiHillTheta = {
   e0: {min: 0, step:  0.1, value:10, max: 1000},
   em: {min: 0.1, step:  0.1, value:100, max: 1000},
   emid1: {min: 0.1, step:  0.1, value:10, max: 1000},
-  h1: {min: -10, step:  0.1, value:0.5, max: 10},
+  h1: {min: 0, step:  0.1, value:0.5, max: 10},
   emax: {min: 0, step:  0.1, value:100, max: 1000},
   emid2: {min: 0.1, step: 0.1, value:20, max: 1000},
-  h2: {min: -10, step: 0.1, value:1, max: 10},
+  h2: {min: 0, step: 0.1, value:1, max: 10},
 
 };
 
@@ -57,3 +57,9 @@ export const twoLogsTheta_TEX: BiHillThetaTex = {
 
 
 
+export interface BiHillResponse  {
+  down: number
+  up: number
+  both: number
+
+}
