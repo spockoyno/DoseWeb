@@ -7,9 +7,10 @@ import {UiImportsModule} from '../ui-imports.module';
 
 @NgModule({
   declarations: [SliderInputComponent, NumberInputComponent],
-  exports: [
-    SliderInputComponent
-  ],
+    exports: [
+        SliderInputComponent,
+        NumberInputComponent
+    ],
   imports: [
     CommonModule,
     UiImportsModule

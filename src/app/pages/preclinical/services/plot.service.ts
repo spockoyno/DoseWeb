@@ -28,7 +28,7 @@ export class PlotService {
 
     this.masterLayout = makeMasterLayout()
 
-    this.showSlave = fb.control<boolean>(false)
+    this.showSlave = fb.control<boolean>(true)
 
   const initSlave = store.selectSnapshot(AppState.clinicalPlot)
     this.slavePlot$ = new BehaviorSubject<Data[]>(trace(initSlave, '#4477aa'))

@@ -1,9 +1,9 @@
-import {clinicalTwoLogsTheta_CORRECTED, BiHillTheta} from './biphasic-hill.model';
+import {BiHillThetaSpec} from './biphasic-hill.model';
 import {FactorInterval} from './common';
 import {CedergreenTheta} from './cedergreen.model';
 
 //from JSFit paper, eq. 4
-export function biHillModel(t: BiHillTheta, x: number ): number {
+export function biHillModel(t: BiHillThetaSpec, x: number ): number {
 
 
 
@@ -13,16 +13,6 @@ export function biHillModel(t: BiHillTheta, x: number ): number {
   return stim * inhib/ t.em.value }
 
 
-
-//stop-gap function with correction to parameters
-export function biHillModelCorrected(t: BiHillTheta, x: number ): number {
-
-  const a = clinicalTwoLogsTheta_CORRECTED
-
-  const inhib = t.e0.value*a.e0 + (t.em.value*a.em-t.e0.value*a.e0)/( 1 + (t.emid1.value*a.emid1/x)**t.h1.value*a.h1)
-  const stim =  t.em.value*a.em + (t.emax.value*a.emax -t.em.value*a.em)/ (1 + (t.emid2.value*a.emid2/x)**t.h2.value*a.h2)
-
-  return stim * inhib/ t.em.value*a.em }
 
 
 

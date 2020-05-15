@@ -1,26 +1,47 @@
-import {BiHillTheta} from '../models/biphasic-hill.model';
+import {BiHillThetaSpec} from '../models/biphasic-hill.model';
 import {FactorInterval} from '../models/common';
 
-export interface DosingModel  {
 
-  twoDoses: number[]
-
+export interface DoseModel  {
+  small: number | undefined
+  medium: number | undefined
+  large: number | undefined
+  xxl: number | undefined
 }
 
+export interface KappaModel  {
+  kappaAssumed: number
+  kappaMultipleDown: number
+  kappaMultipleUp: number
+
+}
 
 export interface PreclinicalModel  {
 
 
 
   doseInterval: FactorInterval
-  twoLogisticsModel: BiHillTheta
+  biHillModel: BiHillThetaSpec
 
 
 }
 
+export interface ClinicalModel  {
+  dosesPreclinicalScale: DoseModel
+
+
+  minimumResponseTarget: number
+  kappaModel: KappaModel
+
+
+}
+
+
 export interface AppModel  {
- dosing: DosingModel
-  preclinical: PreclinicalModel;
+
+  preclinical: PreclinicalModel
+  clinical: ClinicalModel
+
 }
 
 
@@ -29,3 +50,4 @@ export interface PreclinicalBiHillPlotData  {
   response:  number[]
 
 }
+

@@ -1,0 +1,48 @@
+
+
+<div class="main">
+  <h3>Dosing Decisions</h3>
+  <fx-number-input
+    [spec]="service.minimumResponseTargetSpec"
+    [inputWidth]="inputWidth"
+    [control]="service.form.get('minimumResponseTarget')"
+    [placeholder]="'Response above'"
+  >
+  </fx-number-input>
+
+  <fx-number-input
+    [spec]="service.doseSpec"
+    [inputWidth]="inputWidth"
+    [control]="service.doseModel.get('small')"
+    [placeholder]="'Dose 1'"
+  >
+  </fx-number-input>
+
+  <fx-number-input
+    [spec]="service.doseSpec"
+    [inputWidth]="inputWidth"
+    [control]="service.doseModel.get('medium')"
+    [placeholder]="'Dose 2'"
+  >
+  </fx-number-input>
+
+  <fx-number-input
+    [spec]="service.doseSpec"
+    [inputWidth]="inputWidth"
+    [control]="service.doseModel.get('large')"
+    [placeholder]="'Dose 3'"
+  >
+  </fx-number-input>
+
+   <fx-number-input
+    [spec]="service.doseSpec"
+    [inputWidth]="inputWidth"
+    [control]="service.doseModel.get('xxl')"
+    [placeholder]="'Dose 4'"
+  >
+  </fx-number-input>
+
+<fx-kappa-input></fx-kappa-input>
+
+</div>
+<!--todo: make into array-->

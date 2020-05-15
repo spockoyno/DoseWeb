@@ -1,0 +1,32 @@
+
+<div class = "row">
+
+  <mat-slider
+    [min]="specs.lowSlider.min"
+    [max]="specs.lowSlider.max"
+    [value]="specs.lowSlider.value"
+    [step]="specs.lowSlider.step"
+    [thumbLabel]="true"
+    (input)="lowSliderChanged($event)"
+
+  ></mat-slider>
+
+  <fx-number-input
+    [spec]="specs.kappaAssumed"
+    [inputWidth]="6"
+    [control]="kappaForm.get('kappaAssumed')"
+    [placeholder]="'assumed'"
+  >
+  </fx-number-input>
+ <mat-slider
+    [min]="specs.upSlider.min"
+    [max]="specs.upSlider.max"
+    [value]="specs.upSlider.value"
+    [step]="specs.upSlider.step"
+    [thumbLabel]="true"
+    (input)="upSliderChanged($event)"
+
+  ></mat-slider>
+
+
+</div>

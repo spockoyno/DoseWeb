@@ -7,13 +7,12 @@ import {PlotService} from './services/plot.service';
 import {TwoLogisticsInputService} from './services/two-logistics-input.service';
 import {TwoLogisticsComponent} from './two-logistics/two-logistics.component';
 import {ThetaRowComponent} from './theta-row/theta-row.component';
-import { PlotComponent } from './plot/plot.component';
-import {DosingService} from './services/dosing.service';
+import {PlotComponent} from './plot/plot.component';
 
 
 @NgModule({
   declarations: [PreclinicalComponent,  TwoLogisticsComponent, ThetaRowComponent, PlotComponent],
-   providers: [ PlotService, DosingService, TwoLogisticsInputService],
+   providers: [ PlotService,  TwoLogisticsInputService],
   exports: [
     PreclinicalComponent
   ],

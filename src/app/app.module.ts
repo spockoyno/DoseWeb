@@ -14,6 +14,7 @@ import * as PlotlyJS from 'plotly.js/dist/plotly.js';
 import { PlotlyModule } from 'angular-plotly.js';
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
+import {ClinicalModule} from './pages/clinical/clinical.module';
 
 
 PlotlyModule.plotlyjs = PlotlyJS;
@@ -30,6 +31,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PreclinicalModule,
     StoreModule,
     MatIconModule,
+    ClinicalModule,
 
   ],
   providers: [],
