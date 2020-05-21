@@ -3,23 +3,23 @@ import {FactorInterval} from './common';
 import {CedergreenTheta} from './cedergreen.model';
 
 //from JSFit paper, eq. 4
-export function biHillModel(t: BiHillThetaSpec, x: number ): number {
+export function biHillModelValues(t: BiHillThetaSpec, x: number ): number {
 
 
 
-  const inhib = t.e0.value + (t.em.value-t.e0.value)/( 1 + (t.emid1.value/x)**t.h1.value)
-  const stim =  t.em.value + (t.emax.value -t.em.value)/ (1 + (t.emid2.value/x)**t.h2.value)
+  const inhib = t.e0.val + (t.em.val-t.e0.val)/( 1 + (t.emid1.val/x)**t.h1.val)
+  const stim =  t.em.val + (t.emax.val -t.em.val)/ (1 + (t.emid2.val/x)**t.h2.val)
 
-  return stim * inhib/ t.em.value }
+  return stim * inhib/ t.em.val }
 
 
 
 
 
 export function cedergreenModel(t: CedergreenTheta, x: number ):number {
-const   numer = t.d.value - t.c.value + t.f.value * Math.exp(-1/(x**t.a.value))
-  const   denom = 1 + Math.exp(t.b .value* (Math.log(x) - Math. log(t.e.value)))
-  return  t.c.value + numer/denom}
+const   numer = t.d.val - t.c.val + t.f.val * Math.exp(-1/(x**t.a.val))
+  const   denom = 1 + Math.exp(t.b .val* (Math.log(x) - Math. log(t.e.val)))
+  return  t.c.val + numer/denom}
 
 
 export function gridInclusive(d: FactorInterval): number[] {

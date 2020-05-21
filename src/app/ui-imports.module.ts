@@ -31,7 +31,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PlotlyModule} from 'angular-plotly.js';
 import {KatexModule} from 'ng-katex';
-import {Ng5SliderModule} from 'ng5-slider';
 
 
 @NgModule({
@@ -70,7 +69,7 @@ import {Ng5SliderModule} from 'ng5-slider';
     MatTooltipModule,
     DragDropModule,
     KatexModule,
-    Ng5SliderModule,
+
 
 
   ],
@@ -107,7 +106,7 @@ MatBadgeModule,
     MatTooltipModule,
 DragDropModule,
     KatexModule,
-    Ng5SliderModule,
+
 
 
 

@@ -4,28 +4,24 @@ import {NgxsModule} from '@ngxs/store';
 import {NgxsSelectSnapshotModule} from '@ngxs-labs/select-snapshot';
 import {NgxsDispatchPluginModule} from '@ngxs-labs/dispatch-decorator';
 import {AppState} from './app.state';
-
+import {AppConfig} from '../../environments/environment';
 
 @NgModule({
   declarations: [],
   providers: [],
   imports: [
     CommonModule,
-    NgxsModule.forRoot([AppState],
-      {selectorOptions: {
+    NgxsModule.forRoot([AppState], {
+      developmentMode: AppConfig.production,
+      selectorOptions: {
         suppressErrors: false,
-        injectContainerState: false
-      }}
-      ),
+        injectContainerState: false,
+      },
+    }),
     NgxsSelectSnapshotModule.forRoot(),
-    NgxsDispatchPluginModule.forRoot()
-
+    NgxsDispatchPluginModule.forRoot(),
 
   ],
-  exports: [
- NgxsModule,
-    NgxsSelectSnapshotModule
-
-  ]
+  exports: [NgxsModule, NgxsSelectSnapshotModule],
 })
-export class StoreModule { }
+export class StoreModule {}

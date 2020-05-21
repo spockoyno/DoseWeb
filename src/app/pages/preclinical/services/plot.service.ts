@@ -65,7 +65,7 @@ export function makeMasterLayout() {
     width: 600,
     height: 250,
     xaxis: {
-
+      title: '<b>Dose </b>',
       automargin: true,
       type: 'log'
     },
@@ -106,6 +106,7 @@ export function makeSlaveLayout() {
     },
     yaxis: {
       automargin: true,
+      rangemode: 'tozero',
 
     },
     autosize: false,

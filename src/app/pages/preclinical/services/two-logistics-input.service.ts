@@ -14,13 +14,12 @@ export class TwoLogisticsInputService {
     const initTheta = this.store.selectSnapshot(AppState.twoLogsTheta)
     this.form = fb.group<BiHillThetaSpec>(initTheta)
 
-    this.form.allValueChanges().subscribe(value => this.thetaUpdated(value))
+    this.form.allValueChanges().pipe().subscribe(value => setTimeout(()=>{return this.store.dispatch(new ChangedPreclinicalTheta(value))}))
   }
   @Dispatch()
   thetaUpdated(data: BiHillThetaSpec){
     console.log('TwoLogisticsInput')
-    console.log(data
-    )
+    console.log(data)
     return new ChangedPreclinicalTheta(data)
   }
 

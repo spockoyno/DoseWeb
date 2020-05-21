@@ -23,6 +23,7 @@ export class ThetaRowComponent  {
   }
 
 
+
   sliderChanged($event: MatSliderChange) {
 
 
@@ -30,7 +31,7 @@ export class ThetaRowComponent  {
     const update   = $event.value
     if (update===null){ return}
     const current: ThetaSpec = this.form.value
-    this.form.setValue({... current, value: update}, {onlySelf: false,
+    this.form.setValue({... current, val: update}, {onlySelf: false,
       emitEvent: true})
   }
 

@@ -10,14 +10,15 @@ export class ChangedPreclinicalTheta{
 
 export class ChangedKappaInput{
 
-  static type: '[Clinical] Kappa Input'
+  static type: '[KappaInput] Kappa Input'
   constructor(public value: KappaModel) {
   }
 }
 
 export class ChangedClinicalModel{
 
-  static type: '[Clinical] model'
+  static type: '[Clinical] modelValue'
   constructor(public value: ClinicalModel) {
+    console.log('Changed CLinical constructor')
   }
 }

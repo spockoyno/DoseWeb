@@ -7,6 +7,7 @@ import {NumberInputSpec} from '../../../components/components.models';
 import {KappaInputSpecs} from '../local.models';
 import {Dispatch} from '@ngxs-labs/dispatch-decorator';
 import {ChangedClinicalModel, ChangedKappaInput} from '../../../store/actions';
+import {delay} from 'rxjs/operators';
 
 @Injectable()
 export class ClinicalService {
@@ -22,10 +23,11 @@ export class ClinicalService {
 
     })
 
-    this.form.valueChanges.subscribe(value => {
-      console.log('allValueChanges')
+    this.form.valueChanges.pipe(delay(0)).subscribe(value => {
+      console.log('CLINICAL FORM TRIGGERED')
+      console.log('Clinical Service ')
       console.log(value)
-      this.modelUpdate(value)
+     this.store.dispatch(new ChangedClinicalModel(value))
     })
 
 
@@ -80,8 +82,8 @@ get doseModel(): FormGroup<DoseModel>{
 
     return {
       kappaAssumed: assumed,
-      lowSlider: {min: 0.1, max: 1, step: 0.01, value: 1},
-      upSlider: {min: 1, max: 100, step: 1, value: 1}
+      lowSlider: {min: 0.1, max: 1, step: 0.01, val: 1},
+      upSlider: {min: 1, max: 100, step: 1, val: 1}
     }
  }
 

@@ -1,10 +1,11 @@
 
+<h4>Scaling constant</h4>
 <div class = "row">
 
   <mat-slider
     [min]="specs.lowSlider.min"
     [max]="specs.lowSlider.max"
-    [value]="specs.lowSlider.value"
+    [value]="specs.lowSlider.val"
     [step]="specs.lowSlider.step"
     [thumbLabel]="true"
     (input)="lowSliderChanged($event)"
@@ -21,7 +22,7 @@
  <mat-slider
     [min]="specs.upSlider.min"
     [max]="specs.upSlider.max"
-    [value]="specs.upSlider.value"
+    [value]="specs.upSlider.val"
     [step]="specs.upSlider.step"
     [thumbLabel]="true"
     (input)="upSliderChanged($event)"

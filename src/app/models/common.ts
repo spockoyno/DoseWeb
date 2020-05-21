@@ -12,5 +12,5 @@ export interface ThetaSpec {
   min: number;
   max: number;
   step: number
-  value: number
+  val: number
 }

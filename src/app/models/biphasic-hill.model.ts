@@ -15,13 +15,13 @@ export interface BiHillTheta<T > {
 }
 
 export const twoLogs_THETA: BiHillThetaSpec = {
-  e0: { min: 0, step: 0.1, value: 10, max: 1000 },
-  em: { min: 0.1, step: 0.1, value: 131.4, max: 1000 },
-  emid1: { min: 0.1, step: 0.1, value: 15.3, max: 1000 },
-  h1: { min: 0, step: 0.1, value: 6.2, max: 10 },
-  emax: { min: 0, step: 0.1, value: 28.6, max: 1000 },
-  emid2: { min: 0.1, step: 0.1, value: 310, max: 1000 },
-  h2: { min: 0, step: 0.1, value: 2.2, max: 10 },
+  e0: { min: 0, step: 0.1, val: 10, max: 1000 },
+  em: { min: 0.1, step: 0.1, val: 131.4, max: 1000 },
+  emid1: { min: 0.1, step: 0.1, val: 15.3, max: 1000 },
+  h1: { min: 0, step: 0.1, val: 6.2, max: 10 },
+  emax: { min: 0, step: 0.1, val: 28.6, max: 1000 },
+  emid2: { min: 0.1, step: 0.1, val: 310, max: 1000 },
+  h2: { min: 0, step: 0.1, val: 2.2, max: 10 },
 }
 
 
@@ -39,8 +39,12 @@ export const biHillModel_TEX =
   '\\left(A_0 + \\frac{A_{\\infty} -A_0}{1+(A_{50}/x)^{\\alpha}}\\right) \\times \\left(  A_{\\infty}+ \\frac{B_{\\infty} -A_{\\infty}}{1+(B_{50}/x)^{\\beta}}\\right)/A_{\\infty}'
 
 export const biHillModel_TEX_A =
-  'E = \\left(A_0 + \\frac{A_{\\infty} -A_0}{1+(A_{50}/x)^{\\alpha}}\\right)'
+  'E_p = \\left(A_0 + \\frac{A_{\\infty} -A_0}{1+(A_{50}/x)^{\\alpha}}\\right)'
 export const biHillModel_TEX_B =
-  '\\quad\\times \\left(  A_{\\infty}+ \\frac{B_{\\infty} -A_{\\infty}}{1+(B_{50}/x)^{\\beta}}\\right)/A_{\\infty}'
+  '\\qquad\\times \\left(  A_{\\infty}+ \\frac{B_{\\infty} -A_{\\infty}}{1+(B_{50}/x)^{\\beta}}\\right)/A_{\\infty}'
+
+
+export const biHillModel_Clinical =
+  'E_c\\propto (\\kappa A_{50}/x)^{\\alpha},\\,(\\kappa B_{50}/x)^{\\beta}'
 
 

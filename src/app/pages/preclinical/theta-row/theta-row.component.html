@@ -7,13 +7,14 @@
   <mat-slider
     [min]="specs.min"
     [max]="specs.max"
-    [value]="specs.value"
+    [value]="specs.val"
     [step]="specs.step"
     [thumbLabel]="true"
     (input)="sliderChanged($event)"
 
+
   ></mat-slider>
 
-  {{ form.value.value }}
+  {{ form.value.val }}
 </div>
 

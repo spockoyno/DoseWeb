@@ -7,3 +7,4 @@ export interface KappaInputSpecs  {
   upSlider: ThetaSpec,
   kappaAssumed: NumberInputSpec
 }
+// Todo: change from ThetaSpec
