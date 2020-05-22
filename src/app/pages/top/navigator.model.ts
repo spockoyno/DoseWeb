@@ -1,11 +1,11 @@
 import {Routes} from '@angular/router';
 import {TopComponent} from './top.component';
 import {EtaExplorerComponent} from '../eta-explorer/eta-explorer.component';
-import {ClinicalComponent} from '../clinical/clinical.component';
+import {TwoComponent} from '../two/two.component';
 
 export type RouteName =
-  | '/etaExplorer'
-  | '/clinicalScaler'
+  | '/one'
+  | '/two'
 
 
 
@@ -26,16 +26,16 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'etaExplorer'
+        redirectTo: 'one'
       },
 
       {
-        path: 'etaExplorer',
+        path: 'one',
         component: EtaExplorerComponent
       },
       {
-        path: 'clinicalScaler',
-        component: ClinicalComponent
+        path: 'two',
+        component: TwoComponent
       },
 
 
@@ -47,11 +47,11 @@ export const routes: Routes = [
 export const DEFAULT_STEPS: PageStep[] = [
   {
     title: 'Model Explorer',
-    route: ['/etaExplorer'],
+    route: ['/one'],
     enabled: false
   }, {
-    title: 'FIH Scaling',
-    route: ['/clinicalScaler'],
+    title: 'Two',
+    route: ['/two'],
     enabled: false
   },
 

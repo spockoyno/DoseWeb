@@ -9,6 +9,8 @@ import {EtaExplorerModule} from '../eta-explorer/eta-explorer.module';
 import {NavigatorComponent} from './navigator/navigator.component';
 import {HeaderComponent} from './header/header.component';
 import {ClinicalModule} from '../clinical/clinical.module';
+import {OneModule} from '../one/one.module';
+import {TwoModule} from '../two/two.module';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import {ClinicalModule} from '../clinical/clinical.module';
 
     EtaExplorerModule,
     ClinicalModule,
+    OneModule,
+    TwoModule
 
   ]
 })
