@@ -1,0 +1,11 @@
+<nav mat-tab-nav-bar
+>
+  <a mat-tab-link class = "steps__step"
+     *ngFor="let step of steps"
+     [routerLink]="step.route"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{ step.title }}
+
+  </a>
+</nav>
