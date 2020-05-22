@@ -28,7 +28,7 @@ export class SelectorsService {
     const doses = gridInclusive(data.preclinical.doseInterval)
     const theta = data.preclinical.biHillModel
 
-    // const kappaAssumed = data.clinical.kappaModel.kappaAssumed
+     const kappaAssumed = data.clinical.kappaModel.kappaAssumed
 
     console.log(data)
 

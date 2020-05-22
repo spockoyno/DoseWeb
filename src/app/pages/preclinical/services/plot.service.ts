@@ -6,6 +6,7 @@ import {AppState} from '../../../store/state/app.state';
 import {BiHillPlotData} from '../../../store/state/app.model';
 import {LayoutPlotly} from '../../../models/common';
 import {FormBuilder, FormControl} from '../../../utils/forms.utils';
+import {SelectorsService} from '../../../store/selectors.service';
 
 @Injectable()
 export class PlotService {
@@ -17,23 +18,25 @@ export class PlotService {
 
 
   showSlave: FormControl<boolean>
-  constructor(store: Store, fb: FormBuilder) {
+  constructor(store: Store, fb: FormBuilder, service: SelectorsService) {
 
 
-    const initMaster = store.selectSnapshot(AppState.preclinicalPlot)
+    const initMaster = service.preclinicalPlot(store.selectSnapshot(AppState.preclinicalModel))
+
 
     this.masterPlot$ = new BehaviorSubject<Data[]>(trace(initMaster, '#ee6677'))
-    store.select(AppState.preclinicalPlot).subscribe(value =>
-    this.masterPlot$.next(trace(value, '#ee6677')))
+    store.select(AppState.preclinicalModel).subscribe(value =>
+    this.masterPlot$.next(trace(service.preclinicalPlot(value), '#ee6677')))
 
     this.masterLayout = makeMasterLayout()
 
     this.showSlave = fb.control<boolean>(true)
 
-  const initSlave = store.selectSnapshot(AppState.clinicalPlot)
+  const initSlave = service.clinicalPlot(store.selectSnapshot(AppState))
     this.slavePlot$ = new BehaviorSubject<Data[]>(trace(initSlave, '#4477aa'))
-    store.select(AppState.clinicalPlot).subscribe(value =>
-    this.slavePlot$.next(trace(value, '#4477aa')))
+
+    store.select(AppState).subscribe(value =>
+    this.slavePlot$.next(trace(service.clinicalPlot(value), '#4477aa')))
 
     this.slaveLayout = makeSlaveLayout()
 
