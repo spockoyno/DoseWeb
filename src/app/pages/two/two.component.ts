@@ -5,7 +5,7 @@ import {ThetaSpec} from '../../models/common';
 import {EtaState} from '../../store/state/eta.state';
 import {MatSliderChange} from '@angular/material/slider';
 import {Dispatch} from '@ngxs-labs/dispatch-decorator';
-import {PutDummy} from '../../store/actions';
+import {PutDummyTwo} from '../../store/actions';
 
 @Component({
   selector: 'fx-two',
@@ -18,7 +18,7 @@ export class TwoComponent implements OnInit {
   currentSliderValue: number
 
   constructor(private store: Store) {
-    this._slider = new BehaviorSubject<ThetaSpec>(this.store.selectSnapshot(EtaState.dummy).spec)
+    this._slider = new BehaviorSubject<ThetaSpec>(this.store.selectSnapshot(EtaState.dummyTwo).spec)
 
     this.currentSliderValue = this.slider.val
   }
@@ -37,6 +37,6 @@ export class TwoComponent implements OnInit {
       return
     }
     const update = {... this.slider, val: value}
-    return new PutDummy({spec:update})
+    return new PutDummyTwo({spec:update})
   }
 }

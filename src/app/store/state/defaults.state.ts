@@ -39,11 +39,12 @@ export function initialAppState(): AppModel {
 
 
 export function initialEtaStateModel( ): EtaStateModel {
-  const dummy = { min: 0, step: 0.1, val: 6.2, max: 10 }
+
   return {
     doseInterval: { min: 0.1, step: 0.25, max: 10000 },
     biHillModel: biphasicHillThetaExample( ),
-    dummy: {spec: dummy}
+    dummyOne: {interval: { min: 0, step: 0.1,  max: 1000 }, value: 100},
+    dummyTwo: {spec: { min: 0, step: 0.1, val: 6.2, max: 10 }}
   }
 
 }

@@ -1,7 +1,7 @@
 import {BiHillThetaSpec} from '../models/biphasic-hill.model';
 import {ClinicalModel, KappaModel} from './state/app.model';
 import {BiphasicHillParameter} from '../models/common';
-import {PageTwoStateModel} from './state/page-two.state.model';
+import {DummyOneModel, DummyTwoModel} from './state/dummy.state.model';
 
 
 export class PutBiHillParameter{
@@ -11,10 +11,18 @@ export class PutBiHillParameter{
   }
 }
 
-export class PutDummy{
+export class PutDummyOne{
 
-  static readonly type: '[Etas] dummy'
-  constructor(public value: PageTwoStateModel) {
+  static readonly type: '[Etas] dummy one'
+  constructor(public value: DummyOneModel) {
+  }
+}
+
+
+export class PutDummyTwo{
+
+  static readonly type: '[Etas] dummy two'
+  constructor(public value: DummyTwoModel) {
   }
 }
 

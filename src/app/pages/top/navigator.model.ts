@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
 import {TopComponent} from './top.component';
-import {EtaExplorerComponent} from '../eta-explorer/eta-explorer.component';
 import {TwoComponent} from '../two/two.component';
+import {OneComponent} from '../one/one.component';
 
 export type RouteName =
   | '/one'
@@ -31,7 +31,7 @@ export const routes: Routes = [
 
       {
         path: 'one',
-        component: EtaExplorerComponent
+        component: OneComponent
       },
       {
         path: 'two',
@@ -46,7 +46,7 @@ export const routes: Routes = [
 
 export const DEFAULT_STEPS: PageStep[] = [
   {
-    title: 'Model Explorer',
+    title: 'One',
     route: ['/one'],
     enabled: false
   }, {

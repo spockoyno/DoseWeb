@@ -2,9 +2,9 @@ import {Action, Selector, State, StateContext, StateToken} from '@ngxs/store';
 import {initialEtaStateModel} from './defaults.state';
 import {Injectable} from '@angular/core';
 import {EtaStateModel} from './eta.state.model';
-import {PutBiHillParameter, PutDummy} from '../actions';
+import {PutBiHillParameter, PutDummyOne, PutDummyTwo} from '../actions';
 import {BiphasicHillTheta} from '../../models/common';
-import {PageTwoStateModel} from './page-two.state.model';
+import {DummyOneModel, DummyTwoModel} from './dummy.state.model';
 
 const TOKEN = new StateToken<EtaStateModel>('etaStateModel')
 
@@ -24,8 +24,12 @@ export class EtaState {
   }
 
 @Selector()
-static dummy(data: EtaStateModel): PageTwoStateModel{
-    return data.dummy
+static dummyTwo(data: EtaStateModel): DummyTwoModel{
+    return data.dummyTwo
+}
+@Selector()
+static dummyOne(data: EtaStateModel): DummyOneModel{
+    return data.dummyOne
 }
 
   @Action(PutBiHillParameter)
@@ -37,10 +41,19 @@ static dummy(data: EtaStateModel): PageTwoStateModel{
 
     ctx.patchState({biHillModel: updatedTheta}) }
 
-  @Action(PutDummy)
-  actPutDummy(ctx: ContextEta, action:  PutDummy): void
+  @Action(PutDummyOne)
+  actPutDummyOne(ctx: ContextEta, action:  PutDummyOne): void
   {
-    console.log('Inside Dummy action handler')
+    console.log('Inside Dummy One action handler')
     console.log(action)
-    ctx.patchState({dummy:action.value}) }
+    ctx.patchState({dummyOne:action.value}) }
+
+     @Action(PutDummyTwo)
+  actPutDummyTwo(ctx: ContextEta, action:  PutDummyTwo): void
+  {
+    console.log('Inside Dummy Two action handler')
+    console.log(action)
+    ctx.patchState({dummyTwo:action.value}) }
+
+
 }

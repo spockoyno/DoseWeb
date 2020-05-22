@@ -1,13 +1,13 @@
 import {FactorInterval, ThetaSpec} from '../../models/common';
 
-export interface PageOneStateModel  {
+export interface DummyOneModel  {
 
 interval: FactorInterval
   value: number
 }
 
 
-export interface PageTwoStateModel  {
+export interface DummyTwoModel  {
   spec: ThetaSpec
 }
 
