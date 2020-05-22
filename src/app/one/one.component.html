@@ -1,0 +1,14 @@
+
+A
+<mat-slider
+  [min]="slider.interval.min"
+  [max]="slider.interval.max"
+  [value]="slider.value"
+  [step]="slider.interval.step"
+  [thumbLabel]="true"
+  (input)="sliderChanged($event)"
+
+
+></mat-slider>
+
+{{ currentSliderValue }}
