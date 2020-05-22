@@ -3,21 +3,21 @@ import {ClinicalModel, KappaModel} from './app.model';
 
 export class ChangedPreclinicalTheta{
 
-  static type: '[Preclinical] Theta'
+  static readonly type: '[Preclinical] Theta'
   constructor(public value: BiHillThetaSpec) {
   }
 }
 
 export class ChangedKappaInput{
 
-  static type: '[KappaInput] Kappa Input'
+  static readonly type: '[KappaInput] Kappa Input'
   constructor(public value: KappaModel) {
   }
 }
 
 export class ChangedClinicalModel{
 
-  static type: '[Clinical] modelValue'
+  static readonly type: '[Clinical] modelValue'
   constructor(public value: ClinicalModel) {
     console.log('Changed CLinical constructor')
   }

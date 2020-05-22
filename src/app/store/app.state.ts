@@ -18,7 +18,7 @@ import { FactorInterval } from '../models/common'
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
-type PreclinicalContext = StateContext<AppModel>
+type Context = StateContext<AppModel>
 @State<AppModel>({
   name: appModel_TOKEN,
   defaults: initialAppState(),
@@ -66,26 +66,24 @@ export class AppState {
     const doses = gridInclusive(data.preclinical.doseInterval)
     const theta = data.preclinical.biHillModel
 
-   // const kappaAssumed = data.clinical.kappaModel.kappaAssumed
+    // const kappaAssumed = data.clinical.kappaModel.kappaAssumed
 
     console.log(data)
 
-  const kappaAssumed = 10
+    const kappaAssumed = 10
     console.log(data.preclinical)
     let response = doses.map((value) =>
       biHillModelValues(theta, value / kappaAssumed)
     )
-
 
     return { dose: doses, response: response }
   }
 
   @Action(ChangedPreclinicalTheta)
   actChangedPreclinicalTheta(
-    ctx: PreclinicalContext,
+    ctx: Context,
     action: ChangedPreclinicalTheta
   ): void {
-
     console.log('actPreclinical')
     console.log(action)
 
@@ -98,14 +96,14 @@ export class AppState {
   }
 
   @Action(ChangedKappaInput)
-  actChangedKappaInput(ctx: PreclinicalContext, action: ChangedKappaInput): void {
+  actChangedKappaInput(ctx: Context, action: ChangedKappaInput): void {
     console.log('act kAPPA')
     console.log(action)
     const clinical: ClinicalModel = {
       ...ctx.getState().clinical,
       kappaModel: action.value,
     }
-  console.log(`clinical Kappa`)
+    console.log(`clinical Kappa`)
     console.log(clinical)
     ctx.patchState({ clinical: clinical })
     console.log(ctx.getState())
@@ -113,14 +111,11 @@ export class AppState {
   }
 
   @Action(ChangedClinicalModel)
-  actChangedClinicalModel(
-    ctx: PreclinicalContext,
-    action: ChangedClinicalModel
-  ): void {
+  actChangedClinicalModel(ctx: Context, action: ChangedClinicalModel): void {
     console.log('actChangedClinicalModel')
     console.log(action)
     console.log(ctx.getState())
- const state: AppModel={... ctx.getState(), clinical: action.value}
+    const state: AppModel = { ...ctx.getState(), clinical: action.value }
 
     ctx.setState(state)
     console.log(ctx.getState())
