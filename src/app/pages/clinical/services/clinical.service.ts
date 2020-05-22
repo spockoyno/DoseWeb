@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {ClinicalModel, DoseModel, KappaModel} from '../../../store/app.model';
+import {ClinicalModel, DoseModel, KappaModel} from '../../../store/state/app.model';
 import {FormBuilder, FormGroup} from '../../../utils/forms.utils';
 import {Store} from '@ngxs/store';
-import {AppState} from '../../../store/app.state';
+import {AppState} from '../../../store/state/app.state';
 import {NumberInputSpec} from '../../../components/components.models';
 import {KappaInputSpecs} from '../local.models';
 import {Dispatch} from '@ngxs-labs/dispatch-decorator';

@@ -1,5 +1,5 @@
-import {BiHillThetaSpec} from '../models/biphasic-hill.model';
-import {FactorInterval} from '../models/common';
+import {BiHillThetaSpec} from '../../models/biphasic-hill.model';
+import {FactorInterval} from '../../models/common';
 
 
 export interface DoseModel  {
@@ -45,7 +45,7 @@ export interface AppModel  {
 }
 
 
-export interface PreclinicalBiHillPlotData  {
+export interface BiHillPlotData  {
  dose:  number[]
   response:  number[]
 

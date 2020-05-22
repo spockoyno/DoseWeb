@@ -1,5 +1,5 @@
 import {BiHillThetaSpec} from '../models/biphasic-hill.model';
-import {ClinicalModel, KappaModel} from './app.model';
+import {ClinicalModel, KappaModel} from './state/app.model';
 
 export class ChangedPreclinicalTheta{
 

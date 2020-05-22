@@ -1,5 +1,5 @@
 import {AppModel, ClinicalModel, DoseModel, KappaModel, PreclinicalModel} from './app.model';
-import {twoLogs_THETA} from '../models/biphasic-hill.model';
+import {twoLogs_THETA} from '../../models/biphasic-hill.model';
 
 
 export function initialAppState( ): AppModel {

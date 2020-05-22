@@ -3,7 +3,7 @@ import {ClinicalService} from '../services/clinical.service';
 import {KappaInputSpecs} from '../local.models';
 import {FormGroup} from '../../../utils/forms.utils';
 import {MatSliderChange} from '@angular/material/slider';
-import {KappaModel} from '../../../store/app.model';
+import {KappaModel} from '../../../store/state/app.model';
 
 @Component({
   selector: 'fx-kappa-input',

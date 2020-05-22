@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {NgxsModule} from '@ngxs/store';
 import {NgxsSelectSnapshotModule} from '@ngxs-labs/select-snapshot';
 import {NgxsDispatchPluginModule} from '@ngxs-labs/dispatch-decorator';
-import {AppState} from './app.state';
+import {AppState} from './state/app.state';
 import {AppConfig} from '../../environments/environment';
 
 @NgModule({

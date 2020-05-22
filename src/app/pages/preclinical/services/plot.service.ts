@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Data} from '@angular/router';
 import {Store} from '@ngxs/store';
-import {AppState} from '../../../store/app.state';
-import {PreclinicalBiHillPlotData} from '../../../store/app.model';
+import {AppState} from '../../../store/state/app.state';
+import {BiHillPlotData} from '../../../store/state/app.model';
 import {LayoutPlotly} from '../../../models/common';
 import {FormBuilder, FormControl} from '../../../utils/forms.utils';
 
@@ -43,7 +43,7 @@ export class PlotService {
 }
 
 
-function trace(data: PreclinicalBiHillPlotData, colour: string): Data[]{
+function trace(data: BiHillPlotData, colour: string): Data[]{
 
   const response = {
     x: data.dose,

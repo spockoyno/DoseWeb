@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {FormBuilder, FormGroup} from '../../../utils/forms.utils';
 import {BiHillThetaSpec} from '../../../models/biphasic-hill.model';
 import {Store} from '@ngxs/store';
-import {AppState} from '../../../store/app.state';
+import {AppState} from '../../../store/state/app.state';
 import {Dispatch} from '@ngxs-labs/dispatch-decorator';
 import {ChangedPreclinicalTheta} from '../../../store/actions';
 

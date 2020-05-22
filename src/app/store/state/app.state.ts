@@ -3,18 +3,18 @@ import { Action, Selector, State, StateContext, StateToken } from '@ngxs/store'
 import {
   AppModel,
   ClinicalModel,
-  PreclinicalBiHillPlotData,
+  BiHillPlotData,
   PreclinicalModel,
 } from './app.model'
 import { initialAppState } from './defaults.state'
-import { BiHillThetaSpec } from '../models/biphasic-hill.model'
+import { BiHillThetaSpec } from '../../models/biphasic-hill.model'
 import {
   ChangedClinicalModel,
   ChangedKappaInput,
   ChangedPreclinicalTheta,
-} from './actions'
-import { biHillModelValues, gridInclusive } from '../models/model-functions'
-import { FactorInterval } from '../models/common'
+} from '../actions'
+import { biHillModelValues, gridInclusive } from '../../models/model-functions'
+import { FactorInterval } from '../../models/common'
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
@@ -46,7 +46,7 @@ export class AppState {
   }
 
   @Selector()
-  static preclinicalPlot(data: AppModel): PreclinicalBiHillPlotData {
+  static preclinicalPlot(data: AppModel): BiHillPlotData {
     const doses = gridInclusive(data.preclinical.doseInterval)
 
     const theta: BiHillThetaSpec = data.preclinical.biHillModel
@@ -60,7 +60,7 @@ export class AppState {
   }
 
   @Selector()
-  static clinicalPlot(data: AppModel): PreclinicalBiHillPlotData {
+  static clinicalPlot(data: AppModel): BiHillPlotData {
     console.log('clinicalPlot')
     console.log(data)
     const doses = gridInclusive(data.preclinical.doseInterval)
