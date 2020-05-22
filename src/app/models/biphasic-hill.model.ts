@@ -1,4 +1,4 @@
-import { ThetaSpec } from './common'
+import {ThetaSpec} from './common';
 
 
 export type BiHillThetaTex = BiHillTheta<string>

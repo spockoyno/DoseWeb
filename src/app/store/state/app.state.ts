@@ -18,7 +18,7 @@ import { FactorInterval } from '../../models/common'
 
 const appModel_TOKEN = new StateToken<AppModel>('appModel')
 
-type Context = StateContext<AppModel>
+type ContextApp = StateContext<AppModel>
 @State<AppModel>({
   name: appModel_TOKEN,
   defaults: initialAppState(),
@@ -81,7 +81,7 @@ export class AppState {
 
   @Action(ChangedPreclinicalTheta)
   actChangedPreclinicalTheta(
-    ctx: Context,
+    ctx: ContextApp,
     action: ChangedPreclinicalTheta
   ): void {
     console.log('actPreclinical')
@@ -96,7 +96,7 @@ export class AppState {
   }
 
   @Action(ChangedKappaInput)
-  actChangedKappaInput(ctx: Context, action: ChangedKappaInput): void {
+  actChangedKappaInput(ctx: ContextApp, action: ChangedKappaInput): void {
     console.log('act kAPPA')
     console.log(action)
     const clinical: ClinicalModel = {
@@ -111,7 +111,7 @@ export class AppState {
   }
 
   @Action(ChangedClinicalModel)
-  actChangedClinicalModel(ctx: Context, action: ChangedClinicalModel): void {
+  actChangedClinicalModel(ctx: ContextApp, action: ChangedClinicalModel): void {
     console.log('actChangedClinicalModel')
     console.log(action)
     console.log(ctx.getState())

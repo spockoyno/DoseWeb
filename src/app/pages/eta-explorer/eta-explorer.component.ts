@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {BiphasicHillEtaService} from './services/biphasic-hill-eta.service';
+import {BiphasicHillTheta} from '../../models/common';
 
 @Component({
   selector: 'fx-eta-explorer',
   templateUrl: './eta-explorer.component.html',
   styleUrls: ['./eta-explorer.component.scss']
 })
-export class EtaExplorerComponent implements OnInit {
+export class EtaExplorerComponent  {
 
-  constructor() { }
+  initial: BiphasicHillTheta
+  constructor(public biphasicService: BiphasicHillEtaService) {
+    this.initial= this.biphasicService.biHillTheta
 
-  ngOnInit(): void {
   }
+
+
 
 }

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {TwoLogisticsInputService} from '../services/two-logistics-input.service';
-import {twoLogsTheta_TEX, BiHillThetaTex} from '../../../models/biphasic-hill.model';
+import {BiHillThetaTex, twoLogsTheta_TEX} from '../../../models/biphasic-hill.model';
 
 @Component({
   selector: 'fx-two-logistics',
