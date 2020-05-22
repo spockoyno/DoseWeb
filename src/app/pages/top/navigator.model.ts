@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
 import {TopComponent} from './top.component';
 import {EtaExplorerComponent} from '../eta-explorer/eta-explorer.component';
-import {PreclinicalComponent} from '../preclinical/preclinical.component';
+import {ClinicalComponent} from '../clinical/clinical.component';
 
 export type RouteName =
   | '/etaExplorer'
@@ -35,7 +35,7 @@ export const routes: Routes = [
       },
       {
         path: 'clinicalScaler',
-        component: PreclinicalComponent
+        component: ClinicalComponent
       },
 
 

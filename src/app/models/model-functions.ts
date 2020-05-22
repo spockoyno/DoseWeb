@@ -1,6 +1,5 @@
 import {BiHillThetaSpec} from './biphasic-hill.model';
 import {FactorInterval} from './common';
-import {CedergreenTheta} from './cedergreen.model';
 
 //from JSFit paper, eq. 4
 export function biHillModelValues(t: BiHillThetaSpec, x: number ): number {
@@ -16,10 +15,6 @@ export function biHillModelValues(t: BiHillThetaSpec, x: number ): number {
 
 
 
-export function cedergreenModel(t: CedergreenTheta, x: number ):number {
-const   numer = t.d.val - t.c.val + t.f.val * Math.exp(-1/(x**t.a.val))
-  const   denom = 1 + Math.exp(t.b .val* (Math.log(x) - Math. log(t.e.val)))
-  return  t.c.val + numer/denom}
 
 
 export function gridInclusive(d: FactorInterval): number[] {
