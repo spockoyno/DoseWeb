@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Store} from '@ngxs/store';
-import {EtaState} from '../store/eta.state';
+import {DummyState} from '../store/dummy.state';
 import {Dispatch} from '@ngxs-labs/dispatch-decorator';
 import {MatSliderChange} from '@angular/material/slider';
 import {PutDummyOne} from '../store/actions';
@@ -18,7 +18,7 @@ export class OneComponent implements OnInit {
   currentSliderValue: number
 
   constructor(private store: Store) {
-    this._slider = new BehaviorSubject<DummyOneModel>(this.store.selectSnapshot(EtaState.dummyOne))
+    this._slider = new BehaviorSubject<DummyOneModel>(this.store.selectSnapshot(DummyState.dummyOne))
 
     this.currentSliderValue = this.slider.value
   }

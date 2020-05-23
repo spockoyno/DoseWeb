@@ -22,7 +22,7 @@ export interface DummyTwoModel  {
   spec: ThetaSpec
 }
 
-export interface EtaStateModel {
+export interface DummyStateModel {
   dummyOne: DummyOneModel
   dummyTwo: DummyTwoModel
 

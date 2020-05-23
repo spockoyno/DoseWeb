@@ -3,14 +3,14 @@ import {CommonModule} from '@angular/common';
 import {NgxsModule} from '@ngxs/store';
 import {NgxsSelectSnapshotModule} from '@ngxs-labs/select-snapshot';
 import {NgxsDispatchPluginModule} from '@ngxs-labs/dispatch-decorator';
-import {EtaState} from './eta.state';
+import {DummyState} from './dummy.state';
 
 @NgModule({
   declarations: [],
-  providers: [ EtaState],
+  providers: [ DummyState],
   imports: [
     CommonModule,
-    NgxsModule.forRoot([EtaState], {
+    NgxsModule.forRoot([DummyState], {
 
       selectorOptions: {
         suppressErrors: false,

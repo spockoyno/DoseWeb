@@ -3,7 +3,7 @@ import {DummyOneModel, DummyTwoModel} from './dummy.state.model';
 
 export class PutDummyOne{
 
-  static readonly type: '[Etas] dummy one'
+  static readonly type: '[Input] dummy one'
   constructor(public value: DummyOneModel) {
   }
 }
@@ -11,7 +11,7 @@ export class PutDummyOne{
 
 export class PutDummyTwo{
 
-  static readonly type: '[Etas] dummy two'
+  static readonly type: '[Input] dummy two'
   constructor(public spec: DummyTwoModel) {
   }
 }
