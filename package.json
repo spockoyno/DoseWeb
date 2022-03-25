@@ -68,7 +68,7 @@
     "@types/node": "^12.11.1",
     "angular-plotly.js": "^2.0.0",
     "codelyzer": "^5.1.2",
-    "electron": "^8.3.0",
+    "electron": "^13.6.6",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.0.0",
